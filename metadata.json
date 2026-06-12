@@ -1,0 +1,6 @@
+{
+  "name": "Anamnesis",
+  "description": "A bilingual clinical history-taking tool for Egyptian medical students and doctors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
