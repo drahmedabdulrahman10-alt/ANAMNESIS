@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect } from "react";
-import { Printer, RefreshCw, FileText } from "lucide-react";
+import { RefreshCw, FileText } from "lucide-react";
 
 interface WriteUpOutputProps {
   writeUpText: string;
@@ -14,40 +14,7 @@ interface WriteUpOutputProps {
 
 export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: WriteUpOutputProps) {
   
-  // FIX 1 - PRINT BUTTON (Exact implementation requested)
-  function printOutput() {
-    const outputCard = document.getElementById('output-card');
-    const content = outputCard ? outputCard.innerHTML : '';
-    const printWindow = window.open('', '_blank');
-    if (printWindow) {
-      printWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>MedCrux Case Write-Up</title>
-            <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Serif+4&display=swap" rel="stylesheet">
-            <style>
-              @page { size: A4; margin: 2.5cm; }
-              body {
-                font-family: 'Source Serif 4', serif;
-                font-size: 11pt;
-                color: #1A1A2E;
-                line-height: 1.7;
-              }
-              h1, h2, strong, b {
-                font-family: 'DM Serif Display', serif;
-              }
-              p { margin: 0 0 12px 0; }
-            </style>
-          </head>
-          <body>${content}</body>
-        </html>
-      `);
-      printWindow.document.close();
-      printWindow.focus();
-      printWindow.print();
-    }
-  }
+
 
   // Active status query for toolbar
   const updateToolbarStates = () => {
@@ -165,12 +132,11 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
 
   // Translations
   const t = {
-    print: isArabic ? "🖨 طباعة / حفظ كـ PDF" : "🖨 Print / Save as PDF",
     newCase: isArabic ? "+ حالة جديدة" : "+ New Case",
     title: isArabic ? "تقرير الحالة الإكلينيكية المكتمل" : "Completed Case Write-Up",
     sub: isArabic 
-      ? "التقرير مصمم على هيئة طبعة مقاس A4 باللغة الإنجليزية."
-      : "Formated matching standard clinical narrative. Press Print or Save.",
+      ? "التقرير مصمم ليتوافق مع السرد الإكلينيكي المعتمد للتقارير الطبية."
+      : "Formatted to match the standard clinical narrative representation.",
   };
 
   // Pre-formatter to dynamically style report segments for Professional Polish look
@@ -246,7 +212,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
 
       {/* Upper Control Ribbon */}
       <div 
-        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 bg-white border border-[#0D1B3E]/10 rounded-xl shadow-xs"
+        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 bg-white border border-[#0D1B3E]/10 rounded-xl shadow-xs print:hidden"
         style={{ direction: isArabic ? "rtl" : "ltr" }}
       >
         <div className="space-y-1">
@@ -262,16 +228,8 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
         {/* Buttons */}
         <div className="flex flex-wrap gap-2 shrink-0">
           <button
-            onClick={printOutput}
-            className="px-4 py-2 bg-navy text-gold hover:opacity-95 font-semibold text-xs rounded-lg transition-all shadow-sm flex items-center gap-1.5 cursor-pointer"
-          >
-            <Printer className="w-3.5 h-3.5" />
-            <span>{t.print}</span>
-          </button>
-          
-          <button
             onClick={onNewCase}
-            className="px-4 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-700 font-semibold text-xs rounded-lg transition-all flex items-center gap-1.5 cursor-pointer"
+            className="px-4 py-2 bg-[#0D1B3E] hover:opacity-90 border border-transparent text-[#C4922A] font-bold text-xs rounded-lg transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             <span>{t.newCase}</span>
@@ -280,12 +238,17 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
       </div>
 
       {/* FIX 3 - COMPACT FORMATTING TOOLBAR ABOVE OUTPUT CARD */}
-      <div className="w-full flex flex-col gap-2 p-3 bg-stone-50 border border-stone-200 rounded-xl print:hidden shadow-xs select-none">
+      <div 
+        onMouseDown={(e) => e.stopPropagation()}
+        style={{ pointerEvents: "none" }}
+        className="w-full flex flex-col gap-2 p-3 bg-stone-50 border border-stone-200 rounded-xl print:hidden shadow-xs select-none"
+      >
         <div className="flex flex-wrap items-center gap-2">
           {/* Logical Group 1: Bold, Italic, Underline, Underline Alias */}
           <div className="flex items-center gap-1 bg-stone-150 p-1 rounded-lg">
             <button
               id="format-btn-bold"
+              style={{ pointerEvents: "auto" }}
               title="Bold"
               onClick={() => execFormat("bold")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -294,6 +257,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-italic"
+              style={{ pointerEvents: "auto" }}
               title="Italic"
               onClick={() => execFormat("italic")}
               className="h-8 px-2 md:px-3 italic flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -302,6 +266,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-underline"
+              style={{ pointerEvents: "auto" }}
               title="Underline"
               onClick={() => execFormat("underline")}
               className="h-8 px-2 md:px-3 underline flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -310,6 +275,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-underline-alias"
+              style={{ pointerEvents: "auto" }}
               title="Underline (alias)"
               onClick={() => execFormat("underline")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -322,6 +288,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
           <div className="flex items-center gap-1 bg-stone-150 p-1 rounded-lg">
             <button
               id="format-btn-heading"
+              style={{ pointerEvents: "auto" }}
               title="Toggle Heading"
               onClick={toggleHeading}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -330,6 +297,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-bullet"
+              style={{ pointerEvents: "auto" }}
               title="Bullet list"
               onClick={() => execFormat("insertUnorderedList")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -342,6 +310,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
           <div className="flex items-center gap-1 bg-stone-150 p-1 rounded-lg">
             <button
               id="format-btn-outdent"
+              style={{ pointerEvents: "auto" }}
               title="Outdent"
               onClick={() => execFormat("outdent")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -350,6 +319,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-indent"
+              style={{ pointerEvents: "auto" }}
               title="Indent"
               onClick={() => execFormat("indent")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -362,6 +332,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
           <div className="flex items-center gap-1 bg-stone-150 p-1 rounded-lg">
             <button
               id="format-btn-undo"
+              style={{ pointerEvents: "auto" }}
               title="Undo"
               onClick={() => execFormat("undo")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -370,6 +341,7 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
             </button>
             <button
               id="format-btn-redo"
+              style={{ pointerEvents: "auto" }}
               title="Redo"
               onClick={() => execFormat("redo")}
               className="h-8 px-2 md:px-3 flex items-center justify-center rounded-full text-xs font-bold bg-[#0D1B3E] text-white cursor-pointer transition-colors duration-150 active:scale-95 shadow-xs"
@@ -381,30 +353,67 @@ export default function WriteUpOutput({ writeUpText, onNewCase, isArabic }: Writ
 
         {/* Small Info Label */}
         <p className="text-xs italic text-[#C4922A] font-semibold mt-1">
-          ✏️ Click anywhere in the document to edit before printing
+          {isArabic ? "✏️ انقر في أي مكان داخل المستند للتعديل والكتابة مباشرة" : "✏️ Click anywhere in the document to edit or refine the text directly"}
         </p>
       </div>
 
       {/* A4 Format Document Container */}
       <div className="flex justify-center">
         <div className="relative w-full max-w-[794px]">
-          {/* Top border water-marks corner gold/navy line details for MedCrux branding overlay */}
-          <div className="absolute top-0 left-0 w-full h-[6px] bg-[#0D1B3E] z-10 pointer-events-none" />
-          <div className="absolute top-[6px] left-0 w-full h-[2px] bg-[#C4922A] z-10 pointer-events-none" />
+          {/* Top border water-marks corner gold/navy line details for Anamnesis branding overlay */}
+          <div className="absolute top-0 left-0 w-full h-[6px] bg-[#0D1B3E] z-10 pointer-events-none print:hidden" />
+          <div className="absolute top-[6px] left-0 w-full h-[2px] bg-[#C4922A] z-10 pointer-events-none print:hidden" />
 
-          {/* Output card (Fully Editable Rich-Text Document Container in A4 style) */}
-          <div 
-            id="output-card" 
-            contentEditable={true}
-            suppressContentEditableWarning={true}
-            className="w-full min-h-[1123px] bg-white text-[#1A1A2E] border border-stone-300 shadow-2xl p-10 md:p-12 font-serif relative leading-relaxed outline-none text-sm"
-            style={{ 
-              direction: "ltr", // History output is ALWAYS in English!
-            }}
-          >
-            {/* Render Polished Report */}
-            <div className="antialiased selection:bg-gold/30">
-              {renderPolishedText(writeUpText)}
+          {/* Print container wrapper for exact A4 print sizing */}
+          <div id="print-wrapper">
+            {/* Output card (Fully Editable Rich-Text Document Container in A4 style) */}
+            <div 
+              id="output-card" 
+              className="w-full min-h-[1123px] bg-white text-[#1A1A2E] border border-stone-300 shadow-2xl p-10 md:p-12 font-serif relative leading-relaxed outline-none text-sm flex flex-col justify-between"
+              style={{ 
+                direction: "ltr", // History output is ALWAYS in English!
+              }}
+            >
+              {/* Editable region wrapped inside nested div */}
+              <div
+                contentEditable={true}
+                suppressContentEditableWarning={true}
+                className="outline-none w-full flex-1"
+              >
+                {/* Render Polished Report */}
+                <div className="antialiased selection:bg-gold/30">
+                  {renderPolishedText(writeUpText)}
+                </div>
+              </div>
+
+              {/* Fixed PDF Footer outside contenteditable */}
+              <div 
+                id="pdf-fixed-footer" 
+                contentEditable={false}
+                style={{
+                  marginTop: "40px",
+                  paddingTop: "12px",
+                  borderTop: "1px solid #C4922A",
+                  textAlign: "center",
+                  fontSize: "9pt",
+                  color: "#0D1B3E",
+                  fontFamily: "'Source Serif 4', serif",
+                  userSelect: "none",
+                  WebkitUserModify: "read-only",
+                }}
+              >
+                <a 
+                  href="https://ais-pre-3xykxmzzcx2etq5ri6chy2-289134670550.europe-west2.run.app" 
+                  style={{
+                    color: "#C4922A", 
+                    textDecoration: "none", 
+                    fontStyle: "italic", 
+                    pointerEvents: "auto"
+                  }}
+                >
+                  🔗 Click here to visit Anamnesis — Egyptian Medical Edition
+                </a>
+              </div>
             </div>
           </div>
         </div>

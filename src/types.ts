@@ -58,6 +58,7 @@ export interface SessionHeaderData {
 
 export interface SessionData {
   caseId: string;
+  caseSpecialty?: "surgery" | "internal";
   currentStepIndex: number;
   header: SessionHeaderData;
   answers: Record<string, any>; // id mapping to value (string, boolean, or array for multicheck)

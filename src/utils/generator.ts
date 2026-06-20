@@ -96,8 +96,8 @@ export function generateClinicalWriteUp(
       const pSex = pSexVal === "female" ? "female" : pSexVal === "male" ? "male" : "patient";
       const pOccupation = getVal("occupation") || "unemployed";
       const pResidence = getVal("residence");
-      const pMaritalRaw = getVal("marital_status");
-      const pMarital = pMaritalRaw === "single" ? "single" : pMaritalRaw === "married" ? "married" : pMaritalRaw === "widowed" ? "widowed/divorced" : "";
+      const pMaritalRaw = getVal("marital_status") || getVal("marital_state");
+      const pMarital = pMaritalRaw === "single" ? "single" : pMaritalRaw === "married" ? "married" : pMaritalRaw === "widowed" ? "widowed" : pMaritalRaw === "divorced" ? "divorced" : "";
 
       // If we have custom write_up_hints on any personal history fields, construct dynamically
       const hasHints = sectionQuestions.some(q => q.write_up_hint);
@@ -165,9 +165,10 @@ export function generateClinicalWriteUp(
       let cc = "";
       let dur = "";
       
-      if (activeCase.id === "salivary_gland_swelling") {
-        const symptomsVal = getVal("symptoms") || {};
-        const qSymptoms = sectionQuestions.find(q => q.id === "symptoms");
+      if (activeCase.id === "salivary_gland_swelling" || activeCase.id === "hematology" || activeCase.id === "chronic_renal_failure" || activeCase.id === "renal_oedema") {
+        const symptomsId = activeCase.id === "salivary_gland_swelling" ? "symptoms" : "complaint";
+        const symptomsVal = getVal(symptomsId) || {};
+        const qSymptoms = sectionQuestions.find(q => q.id === symptomsId);
         const positives: string[] = [];
         if (qSymptoms && qSymptoms.items) {
           qSymptoms.items.forEach(item => {
@@ -176,7 +177,7 @@ export function generateClinicalWriteUp(
             }
           });
         }
-        cc = positives.length > 0 ? positives.join(" and ") : "salivary gland symptoms";
+        cc = positives.length > 0 ? positives.join(" and ") : (activeCase.id === "salivary_gland_swelling" ? "salivary gland symptoms" : (activeCase.id === "chronic_renal_failure" ? "renal symptoms" : (activeCase.id === "renal_oedema" ? "renal oedema symptoms" : "hematological symptoms")));
         
         const durVal = getVal("duration_value");
         const durUnitRaw = getVal("duration_unit");
@@ -192,7 +193,7 @@ export function generateClinicalWriteUp(
       }
 
       let sentence = "";
-      if (getVal("complaint")) {
+      if (getVal("complaint") && activeCase.id !== "hematology" && activeCase.id !== "chronic_renal_failure" && activeCase.id !== "renal_oedema") {
         sentence = `Presented with a chief complaint of: ${cc}`;
       } else {
         sentence = `Presented with a chief complaint of "${cc}"`;

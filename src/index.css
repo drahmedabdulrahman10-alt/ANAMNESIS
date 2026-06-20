@@ -20,30 +20,17 @@ body {
 
 /* Print Style Guidelines */
 @media print {
-  /* Hide all controls, margins, lists, sidebars */
-  body {
-    background: white !important;
-    color: black !important;
+  body > *:not(#root):not(#print-wrapper) { display: none !important; }
+  #root { display: block !important; background: white !important; }
+  #print-wrapper { display: block !important; }
+  #output-card {
+    width: 100%;
+    margin: 0;
+    padding: 2cm;
+    box-shadow: none;
+    border: none;
   }
-  
-  body > * {
-    display: none !important;
-  }
-
-  /* Make ONLY our A4 document container visible and cover the print layout with 2.5cm margins */
-  #print-container {
-    display: block !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 21cm !important;
-    min-height: 29.7cm !important;
-    padding: 2.5cm !important;
-    margin: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    background: white !important;
-    color: black !important;
-  }
+  .toolbar, .no-print, header, footer,
+  #session-info, #case-selection { display: none !important; }
 }
 

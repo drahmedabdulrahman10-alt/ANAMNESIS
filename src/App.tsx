@@ -59,6 +59,7 @@ export default function App() {
     if (activeCase) {
       const sessionData: SessionData = {
         caseId: activeCase.id,
+        caseSpecialty: activeCase.specialty,
         currentStepIndex,
         header: sessionHeader,
         answers,
@@ -70,7 +71,11 @@ export default function App() {
   // Handle Restore Click
   const handleRestoreSession = () => {
     if (savedSessionTemp) {
-      const matchedCase = CASE_BANK.find((c) => c.id === savedSessionTemp.caseId);
+      const matchedCase = CASE_BANK.find(
+        (c) =>
+          c.id === savedSessionTemp.caseId &&
+          c.specialty === (savedSessionTemp.caseSpecialty || "internal")
+      );
       if (matchedCase) {
         setActiveCase(matchedCase);
         setCurrentStepIndex(savedSessionTemp.currentStepIndex || 0);
@@ -315,7 +320,7 @@ export default function App() {
           className="text-[#C4922A] no-underline hover:underline inline-flex items-center gap-1 align-middle"
         >
           <Github size={16} className="text-[#C4922A]" />
-          Ahmed Abdulrahman
+          GitHub
         </a>
         <span className="text-[#C4922A] mx-2">|</span>
         <a

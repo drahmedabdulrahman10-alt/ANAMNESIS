@@ -9992,5 +9992,4371 @@ export const CASE_BANK: Case[] = [
         ]
       }
     ]
+  },
+  {
+    "id": "rheumatology_joint",
+    "specialty": "internal",
+    "icon": "🦴",
+    "name_en": "Joint Pain (Rheumatology)",
+    "name_ar": "ألم المفاصل (الروماتيزم)",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "patient_name",
+            "type": "text",
+            "label_en": "Patient Name",
+            "label_ar": "اسم المريض",
+            "required": true
+          },
+          {
+            "id": "age",
+            "type": "number",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true,
+            "hint_en": "Child: Still's disease & rheumatic fever; Middle-aged: gout, RA, SLE; Old: osteoarthritis",
+            "hint_ar": "طفل: داء ستيل والحمى الروماتيزمية؛ متوسط العمر: النقرس، الروماتويد، الذئبة"
+          },
+          {
+            "id": "sex",
+            "type": "radio",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ],
+            "write_up_hint": "The patient is a {value} (RA: females 3:1, SLE: females 9:1, Gout: males 9:1)."
+          },
+          {
+            "id": "residence",
+            "type": "text",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "required": false,
+            "write_up_hint": "Resides in {value}."
+          },
+          {
+            "id": "occupation",
+            "type": "text",
+            "label_en": "Occupation",
+            "label_ar": "المهنة",
+            "required": false,
+            "write_up_hint": "Works as a {value} (heavy labor predisposes to osteoarthritis, sedentary occupations of high socioeconomic status predispose to RA/Gout)."
+          },
+          {
+            "id": "marital_status",
+            "type": "radio",
+            "label_en": "Marital Status",
+            "label_ar": "الحالة الاجتماعية",
+            "required": false,
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل" }
+            ]
+          },
+          {
+            "id": "special_habits",
+            "type": "text",
+            "label_en": "Special Habits",
+            "label_ar": "عادات خاصة",
+            "required": false,
+            "write_up_hint": "Special habits: {value} (smoking is a major trigger for rheumatoid arthritis development and severity)."
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "complaint",
+            "type": "text",
+            "label_en": "Presenting Complaint",
+            "label_ar": "الشكوى الرئيسية",
+            "required": true,
+            "write_up_hint": "Presented with a chief complaint of {value}"
+          },
+          {
+            "id": "duration_complaint",
+            "type": "number",
+            "label_en": "Duration of Complaint",
+            "label_ar": "مدة الشكوى",
+            "unit_en": "weeks",
+            "unit_ar": "أسبوع",
+            "required": true,
+            "write_up_hint": "for {value}."
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Present Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "joint_profile_heading",
+            "type": "heading",
+            "label_en": "Joint Involvement Profile",
+            "label_ar": "ملف إصابة المفاصل"
+          },
+          {
+            "id": "joint_onset",
+            "type": "radio",
+            "label_en": "Onset of Pain",
+            "label_ar": "بداية ظهور الألم",
+            "options": [
+              { "value": "sudden", "label_en": "Sudden / Abrupt (highly suggestive of gout or infectious arthritis)", "label_ar": "مفاجئ / حاد (النقرس، التهاب المفاصل الإنتاني)" },
+              { "value": "gradual", "label_en": "Gradual / Insidious (indicative of chronic diseases like RA or osteoarthritis)", "label_ar": "تدريجي (الروماتويد، خشونة المفاصل)" }
+            ],
+            "write_up_hint": "The onset of joint pain was {value}."
+          },
+          {
+            "id": "joint_course",
+            "type": "radio",
+            "label_en": "Course of Joint Symptoms",
+            "label_ar": "مسار أعراض المفاصل",
+            "options": [
+              { "value": "progressive", "label_en": "Progressive (indicates ongoing disease as in RA or osteoarthritis)", "label_ar": "تصاعدي / مستمر" },
+              { "value": "migratory", "label_en": "Migratory (characteristically seen in Rheumatic Fever, sometimes SLE)", "label_ar": "متنقل بين المفاصل" },
+              { "value": "intermittent", "label_en": "Intermittent with attacks (typical for gouty flares)", "label_ar": "متقطع / في شكل نوبات" },
+              { "value": "fluctuating", "label_en": "Fluctuating / Relapsing-remitting (typical of rheumatoid arthritis flare-ups)", "label_ar": "متموج مع فترات خمول ونشاط" }
+            ],
+            "write_up_hint": "The course of joint symptoms is {value}."
+          },
+          {
+            "id": "joint_number",
+            "type": "radio",
+            "label_en": "Pattern of Joint Involvement",
+            "label_ar": "نمط إصابة المفاصل",
+            "options": [
+              { "value": "monoarticular", "label_en": "Monoarticular (1 joint: Gout, septic joint, trauma)", "label_ar": "مفصل واحد (النقرس، إنتاني، إصابة رضحية)" },
+              { "value": "oligoarticular", "label_en": "Oligoarticular (2-4 joints: Reactive or psoriatic arthritis, seronegative spondyloarthropathies)", "label_ar": "2 إلى 4 مفاصل (الالتهاب التفاعلي / الصدفي)" },
+              { "value": "polyarticular", "label_en": "Polyarticular (5+ joints: Rheumatoid arthritis, systemic lupus erythematosus)", "label_ar": "5 مفاصل فأكثر (الروماتويد، الذئبة)" }
+            ],
+            "write_up_hint": "The joint involvement is {value}."
+          },
+          {
+            "id": "distribution",
+            "type": "radio",
+            "label_en": "Symmetry of Joint Involvement",
+            "label_ar": "تماثل الإصابة",
+            "options": [
+              { "value": "symmetrical", "label_en": "Symmetrical (highly characteristic of RA or SLE)", "label_ar": "متماثل على جانبي الجسم" },
+              { "value": "asymmetrical", "label_en": "Asymmetrical (characteristic of reactive arthritis, gout, or early osteoarthritis)", "label_ar": "غير متماثل" }
+            ],
+            "write_up_hint": "The joint symmetry profile is {value}."
+          },
+          {
+            "id": "joints_affected",
+            "type": "multicheck",
+            "label_en": "Joints Currently Affected",
+            "label_ar": "المفاصل المصابة حالياً",
+            "items": [
+              { "id": "small_hands", "label_en": "Small joints of hands (MCP, PIP, sparing DIP in RA)", "label_ar": "المفاصل الصغيرة لليد (الروماتويد)" },
+              { "id": "dip_joints", "label_en": "Distal Interphalangeal joints (DIP: typical for Osteoarthritis / Psoriatic)", "label_ar": "المفاصل بين السلامية القاصية (الخشونة / الصدفية)" },
+              { "id": "wrists", "label_en": "Wrists", "label_ar": "الرسغان" },
+              { "id": "elbows", "label_en": "Elbows", "label_ar": "المرفقان" },
+              { "id": "shoulders", "label_en": "Shoulders", "label_ar": "الكتفان" },
+              { "id": "knees", "label_en": "Knees", "label_ar": "الركبتان" },
+              { "id": "ankles", "label_en": "Ankles", "label_ar": "الكاحلان" },
+              { "id": "hips", "label_en": "Hips", "label_ar": "الوركان" },
+              { "id": "spine", "label_en": "Spine (Cervical / Lumbar)", "label_ar": "العمود الفقري" },
+              { "id": "sacroiliac", "label_en": "Sacroiliac joints (Ankylosing spondylitis)", "label_ar": "المفصل العجزي الحرقفي" }
+            ]
+          },
+          {
+            "id": "morning_stiffness",
+            "type": "radio",
+            "label_en": "Morning Stiffness Profile",
+            "label_ar": "التيبس الصباحي للمفاصل",
+            "options": [
+              { "value": "none", "label_en": "None", "label_ar": "لا يوجد تيبس صباحي" },
+              { "value": "short", "label_en": "Mechanical / < 30 minutes (suggestive of Osteoarthritis)", "label_ar": "ميكانيكي / أقل من 30 دقيقة (الخشونة)" },
+              { "value": "long", "label_en": "Inflammatory / > 1 hour (strongly indicative of Rheumatoid arthritis / active synovitis)", "label_ar": "التهابي / أكثر من ساعة (الروماتويد)" }
+            ],
+            "write_up_hint": "Morning stiffness pattern: {value}."
+          },
+          {
+            "id": "local_signs",
+            "type": "multicheck",
+            "label_en": "Local Signs of Synovitis / Inflammation",
+            "label_ar": "العلامات الموضعية للالتهاب",
+            "items": [
+              { "id": "warmth", "label_en": "Warmth", "label_ar": "سخونة موضعية فوق المفصل" },
+              { "id": "swelling", "label_en": "Joint swelling (effusion or synovial hypertrophy)", "label_ar": "تورم المفصل" },
+              { "id": "redness", "label_en": "Redness over joint (gouty attack / septic arthritis)", "label_ar": "احمرار الجلد فوق المفصل" },
+              { "id": "tenderness", "label_en": "Tenderness on palpation", "label_ar": "إيلام / ألم عند الضغط" },
+              { "id": "limitation", "label_en": "Limitation of range of motion", "label_ar": "تحديد مدى حركة المفصل" },
+              { "id": "deformity", "label_en": "Joint Deformity", "label_ar": "تشوه شكل المفصل" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "systemic_review",
+        "title_en": "Systemic Review (Extra-Articular Signs)",
+        "title_ar": "مراجعة الأجهزة الأخرى (خارج المفصلية)",
+        "questions": [
+          {
+            "id": "systemic_heading",
+            "type": "heading",
+            "label_en": "Extra-Articular Manifestations",
+            "label_ar": "الظواهر والأعراض خارج المفصلية"
+          },
+          {
+            "id": "skin_hair",
+            "type": "multicheck",
+            "label_en": "Dermatological & Mucosal Symptoms",
+            "label_ar": "الأعراض الجلدية والأغشية المخاطية",
+            "items": [
+              { "id": "butterfly_rash", "label_en": "Malar / Butterfly rash (highly specific for SLE)", "label_ar": "طفح الفراشة على الوجنتين (الذئبة الحمراء)" },
+              { "id": "photosensitivity", "label_en": "Photosensitivity (rash triggered by sun exposure)", "label_ar": "حساسية شديدة للشمس" },
+              { "id": "oral_ulcers", "label_en": "Painless oral ulcers (SLE)", "label_ar": "تقرحات فموية غير مؤلمة" },
+              { "id": "alopecia", "label_en": "Alopecia / Diffuse hair loss (SLE)", "label_ar": "سقوط الشعر / ثعلبة" },
+              { "id": "psoriasis_skin", "label_en": "Psoriatic plaques on scalp/extensor surfaces (suggests Psoriatic arthritis)", "label_ar": "لويحات صدفية على الجلد" }
+            ]
+          },
+          {
+            "id": "cardio_resp_signs",
+            "type": "multicheck",
+            "label_en": "Cardio-Respiratory & Senses Features",
+            "label_ar": "أعراض القلب والجهاز التنفسي والحواس",
+            "items": [
+              { "id": "dry_eyes", "label_en": "Dry eyes / Keratoconjunctivitis (suggests Sjögren's / Sicca syndrome)", "label_ar": "جفاف العينين (متلازمة شوغرن)" },
+              { "id": "dry_mouth", "label_en": "Dry mouth / Xerostomia (suggests Sjögren's)", "label_ar": "جفاف الفم" },
+              { "id": "raynauds", "label_en": "Raynaud's phenomenon (episodic pale/blue fingers on cold)", "label_ar": "ظاهرة رينود (تغير لون الأصابع بالبرد)" },
+              { "id": "pleuritic_chest_pain", "label_en": "Pleuritic chest pain (Serositis: pleuritis or pericarditis)", "label_ar": "ألم بالصدر مع التنفس (التهاب البلورة)" },
+              { "id": "dyspnea", "label_en": "Shortness of breath (due to interstitial lung disease or pleural effusion)", "label_ar": "ضيق التنفس" },
+              { "id": "red_eye", "label_en": "Red eyes or eye pain (Uveitis or episcleritis in HLA-B27 spondyloarthritis)", "label_ar": "احمرار / ألم العين (إصابة القزحية)" }
+            ]
+          },
+          {
+            "id": "renal_neuro_symptoms",
+            "type": "multicheck",
+            "label_en": "Renal & Neurological Symptoms",
+            "label_ar": "الأعراض البولية والعصبية",
+            "items": [
+              { "id": "foamy_urine", "label_en": "Foamy urine (nephrotic proteinuria suggestive of Lupus nephritis)", "label_ar": "البول الرغوي (فقدان زلال بالبول)" },
+              { "id": "hematuria", "label_en": "Hematuria / Blood in urine (Lupus Nephritis / vasculitis)", "label_ar": "دم في البول" },
+              { "id": "numbness", "label_en": "Numbness or paresthesia (suggestive of peripheral neuropathy / vasculitis)", "label_ar": "تنميل أو خدر بالأطراف" },
+              { "id": "weakness", "label_en": "Muscle weakness or motor paresis", "label_ar": "ضعف عضلي" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ الطبي السابق",
+        "questions": [
+          {
+            "id": "past_heading",
+            "type": "heading",
+            "label_en": "Past Illnesses",
+            "label_ar": "الأمراض والظروف السابقة"
+          },
+          {
+            "id": "similar_attacks",
+            "type": "checkbox",
+            "label_en": "History of similar joint attacks in the past",
+            "label_ar": "تاريخ لنوبات مفاصل مماثلة في الماضي",
+            "marked_if_negative": true
+          },
+          {
+            "id": "conditions_list",
+            "type": "multicheck",
+            "label_en": "Childhood and past conditions",
+            "label_ar": "تاريخ الطفولة والمشكلات السابقة",
+            "items": [
+              { "id": "rheumatic_fever", "label_en": "Rheumatic fever during childhood (Jones criteria)", "label_ar": "حمى روماتيزمية في الطفولة" },
+              { "id": "sore_throat", "label_en": "Recurrent streptococcal tonsillitis / sore throats", "label_ar": "احتقان الحلق ولوز متكرر" },
+              { "id": "gout", "label_en": "Prior diagnosed attack of acute gout", "label_ar": "نوبة نقرس حادة مشخصة سابقاً" },
+              { "id": "tuberculosis", "label_en": "Tuberculosis or contact with TB patient (highly critical before biologic therapy)", "label_ar": "الدرن / السل أو مخالطة مريض بالسل" },
+              { "id": "autoimmune", "label_en": "Previously diagnosed autoimmune medical condition", "label_ar": "مرض مناعي ذاتي مشخص سابقاً" }
+            ]
+          },
+          {
+            "id": "chronic_diseases",
+            "type": "multicheck",
+            "label_en": "Chronic Medical Conditions",
+            "label_ar": "الأمراض المزمنة الأخرى",
+            "items": [
+              { "id": "hypertension", "label_en": "Hypertension (high blood pressure)", "label_ar": "ارتفاع ضغط الدم" },
+              { "id": "diabetes", "label_en": "Diabetes mellitus", "label_ar": "مرض السكري" },
+              { "id": "renal_impairment", "label_en": "Chronic Kidney Disease (limits NSAID usage)", "label_ar": "قصور الكلى المزمن" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drug_history",
+        "title_en": "Drug History",
+        "title_ar": "التاريخ الدوائي",
+        "questions": [
+          {
+            "id": "drug_heading",
+            "type": "heading",
+            "label_en": "Rheumatological Medications Used Currently or Previously",
+            "label_ar": "العلاجات المستخدمة حالياً أو فر الماضي"
+          },
+          {
+            "id": "meds_used",
+            "type": "multicheck",
+            "label_en": "Rheumatological Medications Profile",
+            "label_ar": "تفاصيل الأدوية الروماتيزمية",
+            "items": [
+              { "id": "nsaids", "label_en": "NSAIDs / painkillers", "label_ar": "مضادات الالتهاب غير الستيروئيدية" },
+              { "id": "steroids", "label_en": "Oral or systemic Corticosteroids (e.g. prednisolone)", "label_ar": "الكورتيزون بالفم / حقن" },
+              { "id": "methotrexate", "label_en": "Methotrexate (traditional DMARD)", "label_ar": "الميثوتريكسات" },
+              { "id": "plaquenil", "label_en": "Hydroxychloroquine (Plaquenil - critical in SLE / RA)", "label_ar": "الهيدروكسي كلوروكين (بلاكوينيل)" },
+              { "id": "biologics", "label_en": "Biological therapy (highly advanced targeted DMARDs)", "label_ar": "العلاجات البيولوجية" },
+              { "id": "colchicine", "label_en": "Colchicine (used in gout flares / FMF)", "label_ar": "الكولشيسين لداء النقرس" }
+            ]
+          },
+          {
+            "id": "drug_allergy",
+            "type": "text",
+            "label_en": "Known Drug Allergies",
+            "label_ar": "حساسية الأدوية المعروفة",
+            "required": false,
+            "write_up_hint": "Drug allergies: {value}."
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "family_rheum",
+            "type": "checkbox",
+            "label_en": "Family history of similar autoimmune or joint condition",
+            "label_ar": "تاريخ عائلي لحالة مناعية أو مرض مفصلي مماثل",
+            "marked_if_negative": true
+          },
+          {
+            "id": "consanguinity",
+            "type": "radio",
+            "label_en": "Consanguinity (Parental Kinship)",
+            "label_ar": "صلة القرابة بين الوالدين",
+            "options": [
+              { "value": "no", "label_en": "No parental kinship/consanguinity", "label_ar": "لا توجد صلة قرابة بين الوالدين" },
+              { "value": "yes_cousins", "label_en": "Parents are first cousins", "label_ar": "الوالدان أولاد عم / أولاد خالة" },
+              { "value": "yes_distant", "label_en": "Parents are distant relatives", "label_ar": "قرابة بعيدة بين الوالدين" }
+            ],
+            "write_up_hint": "Consanguinity: {value}."
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Physical Examination",
+        "title_ar": "الفحص السريري العام",
+        "questions": [
+          {
+            "id": "gen_exam_heading",
+            "type": "heading",
+            "label_en": "General Inspection & Vital Signs Overview",
+            "label_ar": "الفحص الإجمالي وموجز العلامات الحيوية"
+          },
+          {
+            "id": "consciousness",
+            "type": "radio",
+            "label_en": "Level of Consciousness",
+            "label_ar": "مستوى الوعي",
+            "options": [
+              { "value": "alert", "label_en": "Fully alert, awake, and oriented", "label_ar": "واعٍ ومنتبه تماماً" },
+              { "value": "confused", "label_en": "Confused / Disoriented", "label_ar": "مرتبك / غير موجه" },
+              { "value": "lethargic", "label_en": "Lethargic / Drowsy", "label_ar": "خامل / نعسان" }
+            ],
+            "write_up_hint": "On general examination, the patient is {value}."
+          },
+          {
+            "id": "vitals_overview",
+            "type": "multicheck",
+            "label_en": "Vital Signs Assessment",
+            "label_ar": "العلامات الحيوية العامة",
+            "items": [
+              { "id": "bp_normal", "label_en": "Blood pressure is normal (normotensive)", "label_ar": "ضغط الدم في المعدل الطبيعي" },
+              { "id": "hr_normal", "label_en": "Heart rate is normal & regular", "label_ar": "ضربات القلب طبيعية ومنتظمة" },
+              { "id": "temp_normal", "label_en": "Temperature is normal (afebrile)", "label_ar": "درجة الحرارة طبيعية" },
+              { "id": "rr_normal", "label_en": "Respiratory rate is normal", "label_ar": "معدل التنفس طبيعي" }
+            ]
+          },
+          {
+            "id": "general_signs",
+            "type": "multicheck",
+            "label_en": "General Clinical Signs & Dermatological Markers",
+            "label_ar": "العلامات السريرية العامة والجلدية",
+            "items": [
+              { "id": "pallor", "label_en": "Pallor (suggests anemia of chronic disease or lupus hemolysis)", "label_ar": "شحوب الجلد والملتحمة" },
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "اليرقان" },
+              { "id": "rheumatoid_nodules", "label_en": "Rheumatoid nodules (firm lumps over extensor surfaces)", "label_ar": "العقيدات الروماتويدية" },
+              { "id": "butterfly_rash_exam", "label_en": "Malar/Butterfly rash over face", "label_ar": "طفح الفراشة على الوجه" },
+              { "id": "alopecia_exam", "label_en": "Alopecia / Patchy hair thinness", "label_ar": "تساقط شعر واضح" },
+              { "id": "gouty_tophi", "label_en": "Gouty Tophi (chalky joint mineral deposits)", "label_ar": "توفات النقرس فوق المفاصل / الأذن" },
+              { "id": "nail_changes", "label_en": "Nail changes (pitting in psoriasis / vasculitic splinters)", "label_ar": "تغيرات في الأظافر (الالتهاب المفاصل الصدفي)" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "local_examination",
+        "title_en": "Local Joint & Locomotor Examination",
+        "title_ar": "الفحص الموضعي للمفاصل والجهاز الحركي",
+        "questions": [
+          {
+            "id": "local_inspect",
+            "type": "textarea",
+            "label_en": "Inspection (Observe swelling, redness, wasting of muscles, joint deformities, ulnar deviation/swan neck)",
+            "label_ar": "الفحص بالنظر (التورم، الاحمرار، ضمور العضلات حول المفصل، التشوهات)",
+            "write_up_hint": "Local joint inspection: {value}."
+          },
+          {
+            "id": "local_palpate",
+            "type": "textarea",
+            "label_en": "Palpation (Assess local warmth, joint line tenderness, fluid fluctuation, synovial thickness)",
+            "label_ar": "الفحص بالجس (الحرارة الموضعية، ألم خط المفصل، تورم الغشاء المصلي، تجميعات السوائل)",
+            "write_up_hint": "Local joint palpation: {value}."
+          },
+          {
+            "id": "local_movement",
+            "type": "textarea",
+            "label_en": "Range of Motion (Assess passive/active flexion, extension, rotational angles, presence of pain/crepitus)",
+            "label_ar": "مدى الحركة (مرونة الفرد والامتداد، أصوات طقطقة المفصل crepitus أثناء الحركة)",
+            "write_up_hint": "Range of motion evaluation: {value}."
+          },
+          {
+            "id": "local_specials",
+            "type": "textarea",
+            "label_en": "Special Tests (e.g., Patellar tap for large knee effusion, Schober's test for spinal mobility)",
+            "label_ar": "اختبارات مفصلية خاصة (اختبارات ارتداد الرضفة، حركة العمود الفقري)",
+            "write_up_hint": "Special rheumatological tests: {value}."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hematology",
+    "specialty": "internal",
+    "icon": "🩸",
+    "name_en": "Hematology",
+    "name_ar": "أمراض الدم",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "patient_name",
+            "type": "text",
+            "label_en": "Name",
+            "label_ar": "الاسم",
+            "required": true
+          },
+          {
+            "id": "age",
+            "type": "number",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true
+          },
+          {
+            "id": "sex",
+            "type": "radio",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ]
+          },
+          {
+            "id": "occupation",
+            "type": "text",
+            "label_en": "Occupation (e.g., Lead exposure -> Sideroblastic anemia)",
+            "label_ar": "المهنة (مثل التعرض للرصاص -> فقر دم سيدروبلاستي)"
+          },
+          {
+            "id": "marital_state",
+            "type": "radio",
+            "label_en": "Marital State",
+            "label_ar": "الحالة الاجتماعية",
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل" }
+            ]
+          },
+          {
+            "id": "residence",
+            "type": "radio",
+            "label_en": "Residence (e.g., Mediterranean area -> Thalassemia)",
+            "label_ar": "محل الإقامة (مثل منطقة البحر الأبيض المتوسط -> ثلاسيميا)",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "menstrual_history",
+            "type": "textarea",
+            "label_en": "Menstrual History (if female) - e.g., Chronic blood loss -> Fe anemia, ITP -> Heavy period",
+            "label_ar": "التاريخ الطمثي (إن وجد) - مثل فقدان الدم المزمن -> فقر دم بعوز الحديد، ITP -> طمث غزير"
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "complaint",
+            "type": "multicheck",
+            "label_en": "Complaint",
+            "label_ar": "الشكوى",
+            "required": true,
+            "items": [
+              { "id": "headache_fatigue", "label_en": "Headache / Fatigue", "label_ar": "صداع / إرهاق", "marked_if_negative": true },
+              { "id": "skin_lesion", "label_en": "Skin lesion (bleeding/jaundice)", "label_ar": "آفات جلدية (نزيف/يرقان)", "marked_if_negative": true },
+              { "id": "swelling", "label_en": "Swelling (LN, liver or spleen)", "label_ar": "تورم (عقد لمفية، كبد أو طحال)", "marked_if_negative": true },
+              { "id": "abdominal_pain", "label_en": "Abdominal Pain (HSM)", "label_ar": "ألم بطني (تضخم كبد وطحال)", "marked_if_negative": true },
+              { "id": "yellowish_discoloration", "label_en": "Yellowish discoloration", "label_ar": "اصفرار الجلد", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "duration_value",
+            "type": "number",
+            "label_en": "Duration",
+            "label_ar": "المدة",
+            "unit_en": "duration",
+            "unit_ar": "مدة",
+            "required": true
+          },
+          {
+            "id": "duration_unit",
+            "type": "radio",
+            "label_en": "Duration Unit",
+            "label_ar": "وحدة المدة",
+            "required": true,
+            "options": [
+              { "value": "days", "label_en": "Days", "label_ar": "أيام" },
+              { "value": "weeks", "label_en": "Weeks", "label_ar": "أسابيع" },
+              { "value": "months", "label_en": "Months", "label_ar": "أشهر" },
+              { "value": "years", "label_en": "Years", "label_ar": "سنوات" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Presenting Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "onset",
+            "type": "radio",
+            "label_en": "Onset",
+            "label_ar": "البداية",
+            "options": [
+              { "value": "sudden", "label_en": "Sudden", "label_ar": "مفاجئة" },
+              { "value": "gradual", "label_en": "Gradual", "label_ar": "تدريجية" }
+            ]
+          },
+          {
+            "id": "course",
+            "type": "radio",
+            "label_en": "Course",
+            "label_ar": "السير",
+            "options": [
+              { "value": "progressive", "label_en": "Progressive", "label_ar": "تقدمي" },
+              { "value": "intermittent", "label_en": "Intermittent / Episodic", "label_ar": "متقطع / نوبي" },
+              { "value": "stationary", "label_en": "Stationary", "label_ar": "ثابت" },
+              { "value": "regressive", "label_en": "Regressive", "label_ar": "متراجع" }
+            ]
+          },
+          {
+            "id": "rbcs_symptoms",
+            "type": "multicheck",
+            "label_en": "RBCs / Hb Symptoms (Anemia)",
+            "label_ar": "أعراض كريات الدم الحمراء (فقر الدم)",
+            "items": [
+              { "id": "headache_blurring", "label_en": "Headache, blurring of vision, dizziness, syncope", "label_ar": "صداع، تشوش رؤية، دوار، إغماء", "marked_if_negative": true },
+              { "id": "anginal_dyspnea", "label_en": "Anginal pain, dyspnea, palpitations", "label_ar": "ذبحة صدرية، ضيق نفس، خفقان", "marked_if_negative": true },
+              { "id": "fatigue_ic", "label_en": "Fatigue & inability to concentrate", "label_ar": "إرهاق وعدم التركيز", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "wbcs_symptoms",
+            "type": "multicheck",
+            "label_en": "WBCs Symptoms (Infection)",
+            "label_ar": "أعراض كريات الدم البيضاء (عدوى)",
+            "items": [
+              { "id": "sore_throat", "label_en": "Sore throat", "label_ar": "التهاب الحلق", "marked_if_negative": true },
+              { "id": "stomatitis", "label_en": "Stomatitis", "label_ar": "التهاب الفم", "marked_if_negative": true },
+              { "id": "fungal_infection", "label_en": "Fungal Infection", "label_ar": "عدوى فطرية", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "bleeding_symptoms",
+            "type": "multicheck",
+            "label_en": "Bleeding Symptoms (Per Orifices & Skin)",
+            "label_ar": "أعراض النزيف (الفوهات والجلد)",
+            "items": [
+              { "id": "epistaxis", "label_en": "Epistaxis", "label_ar": "رعاف", "marked_if_negative": true },
+              { "id": "haematuria", "label_en": "Haematuria", "label_ar": "بول دموي", "marked_if_negative": true },
+              { "id": "haematochezia", "label_en": "Haematochezia", "label_ar": "براز دموي", "marked_if_negative": true },
+              { "id": "bleeding_gum", "label_en": "Bleeding gum", "label_ar": "نزيف اللثة", "marked_if_negative": true },
+              { "id": "haematemesis", "label_en": "Haematemesis", "label_ar": "قيء دموي", "marked_if_negative": true },
+              { "id": "haemoptysis", "label_en": "Haemoptysis", "label_ar": "بصاق دموي", "marked_if_negative": true },
+              { "id": "petechiae", "label_en": "Petechiae (<2mm)", "label_ar": "حبرات (<2مم)", "marked_if_negative": true },
+              { "id": "purpura", "label_en": "Purpura (2mm-1cm)", "label_ar": "فرفرية (2مم-1سم)", "marked_if_negative": true },
+              { "id": "ecchymosis", "label_en": "Ecchymosis (>1cm)", "label_ar": "كدمات (>1سم)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "haemolysis_symptoms",
+            "type": "multicheck",
+            "label_en": "Evidence of Haemolysis",
+            "label_ar": "أدلة الانحلال",
+            "items": [
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "يرقان", "marked_if_negative": true },
+              { "id": "haemolytic_crisis", "label_en": "Haemolytic crisis (dizziness, fever, rigors)", "label_ar": "نوبة انحلالية (دوار، حمى، قشعريرة)", "marked_if_negative": true },
+              { "id": "repeated_bt", "label_en": "History of repeated blood transfusions", "label_ar": "تاريخ تكرار نقل الدم", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "res_hyperplasia_symptoms",
+            "type": "multicheck",
+            "label_en": "Evidence of RES Hyperplasia",
+            "label_ar": "أدلة تضخم الجملة الشبكية البطانية",
+            "items": [
+              { "id": "hsm", "label_en": "Hepatosplenomegaly", "label_ar": "تضخم الكبد والطحال", "marked_if_negative": true },
+              { "id": "ln_swelling", "label_en": "Lymphadenopathy", "label_ar": "تضخم العقد اللمفية", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "hyperviscosity_symptoms",
+            "type": "multicheck",
+            "label_en": "Hyperviscosity Manifestations (Thromboembolism)",
+            "label_ar": "أعراض اللزوجة العالية (تجلطات)",
+            "items": [
+              { "id": "thromboembolism", "label_en": "Thromboembolic manifestations", "label_ar": "أعراض انصمام خثاري", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ المرضي السابق",
+        "questions": [
+          {
+            "id": "chronic_diseases",
+            "type": "multicheck",
+            "label_en": "History of Chronic Diseases",
+            "label_ar": "تاريخ الأمراض المزمنة",
+            "items": [
+              { "id": "tb", "label_en": "Tuberculosis", "label_ar": "السل", "marked_if_negative": true },
+              { "id": "dm", "label_en": "Diabetes Mellitus", "label_ar": "السكري", "marked_if_negative": true },
+              { "id": "tumors", "label_en": "Tumors / Malignancy", "label_ar": "أورام / خباثات", "marked_if_negative": true },
+              { "id": "hepatitis", "label_en": "Hepatitis", "label_ar": "التهاب الكبد", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "radiotherapy_history",
+            "type": "checkbox",
+            "label_en": "History of Radiotherapy (BM depression)",
+            "label_ar": "تاريخ العلاج الإشعاعي (كبت نقي العظم)",
+            "marked_if_negative": true
+          }
+        ]
+      },
+      {
+        "id": "drug_history",
+        "title_en": "Drug History",
+        "title_ar": "تاريخ الأدوية",
+        "questions": [
+          {
+            "id": "current_medications",
+            "type": "textarea",
+            "label_en": "Current Medications",
+            "label_ar": "الأدوية الحالية"
+          },
+          {
+            "id": "drug_allergy",
+            "type": "checkbox",
+            "label_en": "Drug allergy",
+            "label_ar": "حساسية دوائية",
+            "marked_if_negative": true
+          },
+          {
+            "id": "compliance",
+            "type": "radio",
+            "label_en": "Compliance",
+            "label_ar": "الالتزام بالدواء",
+            "options": [
+              { "value": "regular", "label_en": "Regular", "label_ar": "منتظم" },
+              { "value": "irregular", "label_en": "Irregular", "label_ar": "غير منتظم" },
+              { "value": "stopped", "label_en": "Stopped", "label_ar": "متوقف" }
+            ]
+          },
+          {
+            "id": "haematology_drug_exposure",
+            "type": "multicheck",
+            "label_en": "Previous Drug Intake causing HA abnormalities",
+            "label_ar": "أدوية ساببة تسببت باضطرابات دموية",
+            "items": [
+              { "id": "antithyroid", "label_en": "Antithyroid (Aplastic Anemia)", "label_ar": "أدوية الغدة الدرقية (فقر دم لاتنسجي)", "marked_if_negative": true },
+              { "id": "antiepilepsy", "label_en": "Antiepilepsy (Aplastic Anemia)", "label_ar": "أدوية الصرع (فقر دم لاتنسجي)", "marked_if_negative": true },
+              { "id": "antibiotics", "label_en": "Antibiotics (Aplastic Anemia)", "label_ar": "مضادات حيوية (فقر دم لاتنسجي)", "marked_if_negative": true },
+              { "id": "antidiabetics", "label_en": "Antidiabetics (Aplastic Anemia)", "label_ar": "خافضات السكر (فقر دم لاتنسجي)", "marked_if_negative": true },
+              { "id": "anticancer", "label_en": "Anticancer (Aplastic Anemia)", "label_ar": "علاج كيماوي (فقر دم لاتنسجي)", "marked_if_negative": true },
+              { "id": "alpha_methyl_dopa", "label_en": "Alpha methyl dopa (Haemolytic Anemia)", "label_ar": "ألفا ميثيل دوبا (فقر دم انحلالي)", "marked_if_negative": true },
+              { "id": "anticoagulants", "label_en": "Anticoagulants (Bleeding)", "label_ar": "مميعات الدم (نزيف)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "hereditary_haematological_diseases",
+            "type": "multicheck",
+            "label_en": "Family history of Hereditary HA",
+            "label_ar": "تاريخ عائلي لأمراض الدم الوراثية",
+            "items": [
+              { "id": "hereditary_spherocytosis", "label_en": "Hereditary Spherocytosis (AD)", "label_ar": "كروية الخلايا الوراثية (جسدي سائد)", "marked_if_negative": true },
+              { "id": "thalassemia_sickle", "label_en": "Thalassemia & Sickle cell anemias (AR)", "label_ar": "الثلاسيميا وفقر دم الخلايا المنجلية (جسدي متنحي)", "marked_if_negative": true },
+              { "id": "g6pd_haemophilia", "label_en": "G6PD-D & Haemophilia (X-linked)", "label_ar": "نقص G6PD والهيموفيليا (مرتبط بالجنس)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "social_history",
+        "title_en": "Social History",
+        "title_ar": "التاريخ الاجتماعي",
+        "questions": [
+          {
+            "id": "smoking",
+            "type": "checkbox",
+            "label_en": "Smoking",
+            "label_ar": "التدخين",
+            "marked_if_negative": true
+          },
+          {
+            "id": "smoking_pack_years",
+            "type": "number",
+            "label_en": "Smoking pack-years",
+            "label_ar": "مؤشر التدخين (عبوة-سنة)",
+            "unit_en": "pack-years",
+            "unit_ar": "عبوة-سنة"
+          },
+          {
+            "id": "alcohol",
+            "type": "checkbox",
+            "label_en": "Alcohol consumption (Megaloblastic anemia)",
+            "label_ar": "تناول الكحول (فقر دم ضخم الأرومات)"
+          },
+          {
+            "id": "occupation_exposure",
+            "type": "text",
+            "label_en": "Occupation (relevant exposure e.g., Lead)",
+            "label_ar": "المهنة (التعرض ذو الصلة مثل الرصاص)"
+          },
+          {
+            "id": "residence_type",
+            "type": "radio",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "socioeconomic_state",
+            "type": "textarea",
+            "label_en": "Socioeconomic state",
+            "label_ar": "الحالة الاجتماعية والاقتصادية"
+          }
+        ]
+      },
+      {
+        "id": "systemic_review",
+        "title_en": "Systemic Review",
+        "title_ar": "المراجعة الجهازية",
+        "questions": [
+          {
+            "id": "cns_symptoms",
+            "type": "multicheck",
+            "label_en": "CNS Symptoms",
+            "label_ar": "أعراض الجهاز العصبي المركزي",
+            "items": [
+              { "id": "ichge", "label_en": "Intracranial Haemorrhage (in Purpura/Haemophilia)", "label_ar": "نزيف داخل القحف (في الفرفرية/الهيموفيليا)", "marked_if_negative": true },
+              { "id": "cns_infiltration", "label_en": "Infiltration signs (in Blood Malignancies)", "label_ar": "علامات ارتشاح (في خباثات الدم)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "cvs_chest_symptoms",
+            "type": "multicheck",
+            "label_en": "CVS & Chest Symptoms",
+            "label_ar": "أعراض القلب والصدر",
+            "items": [
+              { "id": "dyspnea_palpitation", "label_en": "Dyspnea, Palpitation & arrhythmia (in Anemia)", "label_ar": "ضيق نفس، خفقان واضطراب نظم (في فقر الدم)", "marked_if_negative": true },
+              { "id": "lung_infiltration", "label_en": "Pleural or lung infiltration (in Blood Malignancies)", "label_ar": "ارتشاح جنبي أو رئوي (في خباثات الدم)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "msk_others_symptoms",
+            "type": "multicheck",
+            "label_en": "Musculoskeletal & Other Symptoms",
+            "label_ar": "أعراض العضلات والعظام وأخرى",
+            "items": [
+              { "id": "bone_pain_fracture", "label_en": "Bone pain & Fracture (Multiple Myeloma)", "label_ar": "ألم العظام والكسور (المايلوما المتعددة)", "marked_if_negative": true },
+              { "id": "joint_pain_swelling", "label_en": "Joint Pain & Swelling: Haemoarthrosis (Haemophilia)", "label_ar": "ألم وتورم المفاصل: تدمي المفصل (الهيموفيليا)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Examination",
+        "title_ar": "الفحص العام",
+        "questions": [
+          {
+            "id": "vital_signs_heading",
+            "type": "heading",
+            "label_en": "Vital Signs",
+            "label_ar": "العلامات الحيوية"
+          },
+          {
+            "id": "pulse_rate",
+            "type": "number",
+            "label_en": "Pulse Rate",
+            "label_ar": "معدل النبض",
+            "unit_en": "beats/min",
+            "unit_ar": "نبضة/دقيقة"
+          },
+          {
+            "id": "blood_pressure_systolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Systolic",
+            "label_ar": "ضغط الدم - الانقباضي",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "blood_pressure_diastolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Diastolic",
+            "label_ar": "ضغط الدم - الانبساطي",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "temperature",
+            "type": "number",
+            "label_en": "Temperature",
+            "label_ar": "درجة الحرارة",
+            "unit_en": "°C",
+            "unit_ar": "°م"
+          },
+          {
+            "id": "respiratory_rate",
+            "type": "number",
+            "label_en": "Respiratory Rate",
+            "label_ar": "معدل التنفس",
+            "unit_en": "breaths/min",
+            "unit_ar": "نفس/دقيقة"
+          },
+          {
+            "id": "oxygen_saturation",
+            "type": "number",
+            "label_en": "O2 Saturation",
+            "label_ar": "تشبع الأكسجين",
+            "unit_en": "%",
+            "unit_ar": "%"
+          },
+          {
+            "id": "general_condition",
+            "type": "radio",
+            "label_en": "General Condition",
+            "label_ar": "الحالة العامة",
+            "options": [
+              { "value": "good", "label_en": "Good", "label_ar": "جيدة" },
+              { "value": "fair", "label_en": "Fair", "label_ar": "متوسطة" },
+              { "value": "poor", "label_en": "Poor", "label_ar": "سيئة" }
+            ]
+          },
+          {
+            "id": "general_overview_heading",
+            "type": "heading",
+            "label_en": "General Overview",
+            "label_ar": "النظرة العامة"
+          },
+          {
+            "id": "consciousness",
+            "type": "radio",
+            "label_en": "Consciousness / Mentality",
+            "label_ar": "الوعي / الحالة العقلية",
+            "options": [
+              { "value": "conscious", "label_en": "Conscious & oriented", "label_ar": "واعٍ ومدرك" },
+              { "value": "confused", "label_en": "Confused", "label_ar": "مشوش" },
+              { "value": "unconscious", "label_en": "Unconscious", "label_ar": "فاقد للوعي" }
+            ]
+          },
+          {
+            "id": "built",
+            "type": "radio",
+            "label_en": "Built",
+            "label_ar": "البنية",
+            "options": [
+              { "value": "average", "label_en": "Average built", "label_ar": "متوسطة" },
+              { "value": "over", "label_en": "Over built", "label_ar": "زائدة" },
+              { "value": "under", "label_en": "Under built / Short stature (Chronic haemolytic anemia)", "label_ar": "ضعيفة / قصر القامة (فقر الدم الانحلالي المزمن)" }
+            ]
+          },
+          {
+            "id": "general_appearance",
+            "type": "multicheck",
+            "label_en": "General Appearance Findings",
+            "label_ar": "علامات الفحص العام",
+            "items": [
+              { "id": "pallor", "label_en": "Pallor", "label_ar": "الشحوب", "marked_if_negative": true },
+              { "id": "jaundice", "label_en": "Jaundice (Haemolytic)", "label_ar": "اليرقان (انحلالي)", "marked_if_negative": true },
+              { "id": "cyanosis", "label_en": "Cyanosis (Never occur with anemia)", "label_ar": "الزرقة (لا تحدث مع فقر الدم)", "marked_if_negative": true },
+              { "id": "clubbing", "label_en": "Clubbing", "label_ar": "تعجر الأصابع", "marked_if_negative": true },
+              { "id": "oedema", "label_en": "Lower limb oedema (Anemic HF)", "label_ar": "وذمة الطرفين السفليين (قصم قلبي فقر دموي)", "marked_if_negative": true },
+              { "id": "lymphadenopathy", "label_en": "Lymphadenopathy", "label_ar": "اعتلال العقد اللمفية", "marked_if_negative": true },
+              { "id": "mongoloid_face", "label_en": "Mongoloid face (Thalassemia)", "label_ar": "وجه منغولي (الثلاسيميا)", "marked_if_negative": true },
+              { "id": "koilonychia", "label_en": "Koilonychia (Fe anemia)", "label_ar": "تقعر الأظافر (فقر دم بعوز الحديد)", "marked_if_negative": true },
+              { "id": "leg_ulcer", "label_en": "Leg Ulcer (Sickle Cell Anemia)", "label_ar": "قرحة الساق (فقر دم الخلايا المنجلية)", "marked_if_negative": true },
+              { "id": "hess_test", "label_en": "Positive Hess Test (Purpura)", "label_ar": "اختبار هيس الإيجابي (الفرفرية)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "system_examination",
+        "title_en": "System Examination",
+        "title_ar": "فحص الجهاز",
+        "questions": [
+          {
+            "id": "abdomen_heading",
+            "type": "heading",
+            "label_en": "Abdominal Examination",
+            "label_ar": "فحص البطن"
+          },
+          {
+            "id": "abdomen_inspection",
+            "type": "textarea",
+            "label_en": "Inspection (Abdominal distention, Splenectomy scar)",
+            "label_ar": "الفحص بالنظر (انتفاخ البطن، أثر استئصال الطحال)"
+          },
+          {
+            "id": "abdomen_palpation",
+            "type": "textarea",
+            "label_en": "Palpation (Hepatosplenomegaly, Tender abdomen)",
+            "label_ar": "الفحص بالجس (تضخم الكبد والطحال، ألم بالبطن)"
+          },
+          {
+            "id": "abdomen_percussion",
+            "type": "textarea",
+            "label_en": "Percussion (Traub's area for spleen, Ascites)",
+            "label_ar": "الفحص بالقرع (منطقة تراوب للطحال، الاستسقاء)"
+          },
+          {
+            "id": "cvs_heading",
+            "type": "heading",
+            "label_en": "Cardiovascular Examination",
+            "label_ar": "فحص القلب"
+          },
+          {
+            "id": "cvs_inspection",
+            "type": "textarea",
+            "label_en": "Inspection (Neck veins: Congested in hyperdynamic circulation)",
+            "label_ar": "الفحص بالنظر (أوردة الرقبة: محتقنة في الدورة الدموية مفرطة النشاط)"
+          },
+          {
+            "id": "cvs_palpation",
+            "type": "textarea",
+            "label_en": "Palpation (Hyperdynamic apex)",
+            "label_ar": "الفحص بالجس (قمة مفرطة النشاط)"
+          },
+          {
+            "id": "cvs_auscultation",
+            "type": "textarea",
+            "label_en": "Auscultation (S1, S2, S3 volume overload, Haemic Murmur)",
+            "label_ar": "الفحص بالسماع (الصوت الأول، الثاني، الثالث للحجم الزائد، لغط دموي)"
+          },
+          {
+            "id": "msk_heading",
+            "type": "heading",
+            "label_en": "Musculoskeletal Examination",
+            "label_ar": "فحص العضلات والعظام"
+          },
+          {
+            "id": "msk_palpation",
+            "type": "textarea",
+            "label_en": "Palpation (Tender sternum in leukemia, Joint swelling in Haemophilia)",
+            "label_ar": "الفحص بالجس (ألم عظم القص في ابيضاض الدم، تورم المفاصل في الهيموفيليا)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chronic_renal_failure",
+    "specialty": "internal",
+    "icon": "🫘",
+    "name_en": "Chronic Renal Failure (Uraemia)",
+    "name_ar": "القصور الكلوي المزمن (اليوريميا)",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "patient_name",
+            "type": "text",
+            "label_en": "Name",
+            "label_ar": "الاسم",
+            "required": true
+          },
+          {
+            "id": "age",
+            "type": "number",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true
+          },
+          {
+            "id": "sex",
+            "type": "radio",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ]
+          },
+          {
+            "id": "occupation",
+            "type": "text",
+            "label_en": "Occupation",
+            "label_ar": "المهنة"
+          },
+          {
+            "id": "marital_state",
+            "type": "radio",
+            "label_en": "Marital State",
+            "label_ar": "الحالة الاجتماعية",
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل" }
+            ]
+          },
+          {
+            "id": "residence",
+            "type": "radio",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "menstrual_history",
+            "type": "textarea",
+            "label_en": "Menstrual History (if female)",
+            "label_ar": "التاريخ الطمثي (إن وجد)"
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "complaint",
+            "type": "multicheck",
+            "label_en": "Complaint",
+            "label_ar": "الشكوى",
+            "required": true,
+            "items": [
+              { "id": "headache_htn", "label_en": "Headache (due to HTN)", "label_ar": "صداع (بسبب ارتفاع ضغط الدم)", "marked_if_negative": true },
+              { "id": "fatigue_anemia", "label_en": "Fatigue (due to anemia)", "label_ar": "إرهاق (بسبب فقر الدم)", "marked_if_negative": true },
+              { "id": "other_complaint", "label_en": "Other (e.g. swelling, shortness of breath)", "label_ar": "أخرى (مثل تورم، ضيق نفس)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "duration_value",
+            "type": "number",
+            "label_en": "Duration",
+            "label_ar": "المدة",
+            "unit_en": "duration",
+            "unit_ar": "مدة",
+            "required": true
+          },
+          {
+            "id": "duration_unit",
+            "type": "radio",
+            "label_en": "Duration Unit",
+            "label_ar": "وحدة المدة",
+            "required": true,
+            "options": [
+              { "value": "days", "label_en": "Days", "label_ar": "أيام" },
+              { "value": "weeks", "label_en": "Weeks", "label_ar": "أسابيع" },
+              { "value": "months", "label_en": "Months", "label_ar": "أشهر" },
+              { "value": "years", "label_en": "Years", "label_ar": "سنوات" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Presenting Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "onset",
+            "type": "radio",
+            "label_en": "Onset",
+            "label_ar": "البداية",
+            "options": [
+              { "value": "sudden", "label_en": "Sudden", "label_ar": "مفاجئة" },
+              { "value": "gradual", "label_en": "Gradual", "label_ar": "تدريجية" }
+            ]
+          },
+          {
+            "id": "course",
+            "type": "radio",
+            "label_en": "Course",
+            "label_ar": "السير",
+            "options": [
+              { "value": "progressive", "label_en": "Progressive", "label_ar": "تقدمي" },
+              { "value": "intermittent", "label_en": "Intermittent / Episodic", "label_ar": "متقطع / نوبي" },
+              { "value": "stationary", "label_en": "Stationary", "label_ar": "ثابت" },
+              { "value": "regressive", "label_en": "Regressive", "label_ar": "متراجع" }
+            ]
+          },
+          {
+            "id": "fluid_electrolyte_symptoms",
+            "type": "multicheck",
+            "label_en": "Fluid & Electrolyte Symptoms",
+            "label_ar": "أعراض السوائل والشوارد",
+            "items": [
+              { "id": "edema", "label_en": "Edema (Na retention)", "label_ar": "وذمة (احتباس الصوديوم)", "marked_if_negative": true },
+              { "id": "dehydration", "label_en": "Dehydration (Na loss)", "label_ar": "جفاف (فقدان الصوديوم)", "marked_if_negative": true },
+              { "id": "acidosis_symptoms", "label_en": "Symptoms of acidosis (e.g. deep breathing)", "label_ar": "أعراض الحماض (مثل التنفس العميق)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "git_symptoms",
+            "type": "multicheck",
+            "label_en": "Gastrointestinal Symptoms",
+            "label_ar": "أعراض الجهاز الهضمي",
+            "items": [
+              { "id": "uremic_odour", "label_en": "Uremic odour", "label_ar": "رائحة يوريمية", "marked_if_negative": true },
+              { "id": "dry_coated_tongue", "label_en": "Dry and coated tongue", "label_ar": "لسان جاف ومغطى", "marked_if_negative": true },
+              { "id": "anv", "label_en": "Anorexia, Nausea, Vomiting", "label_ar": "فقدان شهية، غثيان، قيء", "marked_if_negative": true },
+              { "id": "git_bleeding", "label_en": "GIT bleeding", "label_ar": "نزيف الجهاز الهضمي", "marked_if_negative": true },
+              { "id": "bowel_changes", "label_en": "Constipation or Diarrhea", "label_ar": "إمساك أو إسهال", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "neurological_symptoms",
+            "type": "multicheck",
+            "label_en": "Neurological Symptoms",
+            "label_ar": "الأعراض العصبية",
+            "items": [
+              { "id": "apathy_asterixis", "label_en": "Apathy & Asterixis", "label_ar": "تبلد المشاعر والرعاش الأرقطي", "marked_if_negative": true },
+              { "id": "irritability", "label_en": "Irritability (Psychotic)", "label_ar": "التهيج (نفاسي)", "marked_if_negative": true },
+              { "id": "pn_myopathy", "label_en": "Peripheral Neuropathy & Myopathy", "label_ar": "اعتلال الأعصاب الطرفية والعضلية", "marked_if_negative": true },
+              { "id": "confusion", "label_en": "Confusion", "label_ar": "ارتباك", "marked_if_negative": true },
+              { "id": "dementia", "label_en": "Dementia (Dialysis)", "label_ar": "خرف (غسيل كلوي)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "skin_bone_symptoms",
+            "type": "multicheck",
+            "label_en": "Skin & Bone Symptoms",
+            "label_ar": "أعراض الجلد والعظام",
+            "items": [
+              { "id": "earthy_look", "label_en": "Earthy look (Pallor + Urochrome pigmentation)", "label_ar": "مظهر ترابي (شحوب + تصبغ اليوروكروم)", "marked_if_negative": true },
+              { "id": "pruritus", "label_en": "Pruritus", "label_ar": "حكة", "marked_if_negative": true },
+              { "id": "bone_pain", "label_en": "Generalized bony pain (Hyperparathyroidism)", "label_ar": "ألم عظام معمم (فرط نشاط جارات الدرقية)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ المرضي السابق",
+        "questions": [
+          {
+            "id": "etiology",
+            "type": "multicheck",
+            "label_en": "History of Chronic Diseases (Etiology)",
+            "label_ar": "تاريخ الأمراض المزمنة (الأسباب)",
+            "items": [
+              { "id": "pyelonephritis", "label_en": "Recurrent loin pain (Pyelonephritis - commonest in Egypt)", "label_ar": "ألم خاصرة متكرر (التهاب الحويضة والكلية - الأكثر شيوعاً في مصر)", "marked_if_negative": true },
+              { "id": "dm", "label_en": "Diabetes Mellitus (commonest worldwide)", "label_ar": "السكري (الأكثر شيوعاً عالمياً)", "marked_if_negative": true },
+              { "id": "htn", "label_en": "Hypertension", "label_ar": "ارتفاع ضغط الدم", "marked_if_negative": true },
+              { "id": "collagen_disease", "label_en": "Collagen disease", "label_ar": "أمراض الكولاجين", "marked_if_negative": true },
+              { "id": "gout", "label_en": "Gout", "label_ar": "النقرس", "marked_if_negative": true },
+              { "id": "renal_stones", "label_en": "Renal stones", "label_ar": "حصوات الكلى", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drug_history",
+        "title_en": "Drug History",
+        "title_ar": "تاريخ الأدوية",
+        "questions": [
+          {
+            "id": "current_medications",
+            "type": "textarea",
+            "label_en": "Current Medications (Include any renal toxins like NSAIDs)",
+            "label_ar": "الأدوية الحالية (تشمل أي سموم كلوية مثل مضادات الالتهاب غير الستيرويدية)"
+          },
+          {
+            "id": "drug_allergy",
+            "type": "checkbox",
+            "label_en": "Drug allergy",
+            "label_ar": "حساسية دوائية",
+            "marked_if_negative": true
+          },
+          {
+            "id": "compliance",
+            "type": "radio",
+            "label_en": "Compliance",
+            "label_ar": "الالتزام بالدواء",
+            "options": [
+              { "value": "regular", "label_en": "Regular", "label_ar": "منتظم" },
+              { "value": "irregular", "label_en": "Irregular", "label_ar": "غير منتظم" },
+              { "value": "stopped", "label_en": "Stopped", "label_ar": "متوقف" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "family_disease",
+            "type": "checkbox",
+            "label_en": "Family history of disease / condition (e.g., Polycystic Kidney - AD)",
+            "label_ar": "تاريخ عائلي للمرض / الحالة (مثل مرض الكلى متعدد الكيسات - جسدي سائد)",
+            "marked_if_negative": true
+          }
+        ]
+      },
+      {
+        "id": "social_history",
+        "title_en": "Social History",
+        "title_ar": "التاريخ الاجتماعي",
+        "questions": [
+          {
+            "id": "smoking",
+            "type": "checkbox",
+            "label_en": "Smoking",
+            "label_ar": "التدخين",
+            "marked_if_negative": true
+          },
+          {
+            "id": "smoking_pack_years",
+            "type": "number",
+            "label_en": "Smoking pack-years",
+            "label_ar": "مؤشر التدخين (عبوة-سنة)",
+            "unit_en": "pack-years",
+            "unit_ar": "عبوة-سنة"
+          },
+          {
+            "id": "alcohol",
+            "type": "checkbox",
+            "label_en": "Alcohol consumption",
+            "label_ar": "تناول الكحول"
+          },
+          {
+            "id": "occupation_exposure",
+            "type": "text",
+            "label_en": "Occupation (relevant exposure)",
+            "label_ar": "المهنة (التعرض ذو الصلة)"
+          },
+          {
+            "id": "residence_type",
+            "type": "radio",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "socioeconomic_state",
+            "type": "textarea",
+            "label_en": "Socioeconomic state",
+            "label_ar": "الحالة الاجتماعية والاقتصادية"
+          }
+        ]
+      },
+      {
+        "id": "systemic_review",
+        "title_en": "Systemic Review",
+        "title_ar": "المراجعة الجهازية",
+        "questions": [
+          {
+            "id": "cvs_review",
+            "type": "multicheck",
+            "label_en": "Cardiovascular System Review",
+            "label_ar": "مراجعة الجهاز الدوري",
+            "items": [
+              { "id": "htn_symptoms", "label_en": "Hypertension symptoms (headache, dizziness)", "label_ar": "أعراض ارتفاع ضغط الدم (صداع، دوار)", "marked_if_negative": true },
+              { "id": "pericarditis", "label_en": "Chest pain (Pericarditis)", "label_ar": "ألم صدر (التهاب التامور)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "resp_review",
+            "type": "multicheck",
+            "label_en": "Respiratory System Review",
+            "label_ar": "مراجعة الجهاز التنفسي",
+            "items": [
+              { "id": "kussmaul_breathing", "label_en": "Kussmaul breathing (Acidosis)", "label_ar": "تنفس كوسماول (الحماض)", "marked_if_negative": true },
+              { "id": "pulmonary_edema", "label_en": "Shortness of breath (Pulmonary edema)", "label_ar": "ضيق نفس (وذمة رئة)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "bleeding_review",
+            "type": "multicheck",
+            "label_en": "Bleeding Tendency Review (Toxemia effect)",
+            "label_ar": "مراجعة الميل للنزيف (تأثير السموم)",
+            "items": [
+              { "id": "petechiae", "label_en": "Petechiae or ecchymosis", "label_ar": "حبرات أو كدمات", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Examination",
+        "title_ar": "الفحص العام",
+        "questions": [
+          {
+            "id": "vital_signs_heading",
+            "type": "heading",
+            "label_en": "Vital Signs",
+            "label_ar": "العلامات الحيوية"
+          },
+          {
+            "id": "pulse_rate",
+            "type": "number",
+            "label_en": "Pulse Rate",
+            "label_ar": "معدل النبض",
+            "unit_en": "beats/min",
+            "unit_ar": "نبضة/دقيقة"
+          },
+          {
+            "id": "blood_pressure_systolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Systolic",
+            "label_ar": "ضغط الدم - الانقباضي",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "blood_pressure_diastolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Diastolic",
+            "label_ar": "ضغط الدم - الانبساطي",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "temperature",
+            "type": "number",
+            "label_en": "Temperature",
+            "label_ar": "درجة الحرارة",
+            "unit_en": "°C",
+            "unit_ar": "°م"
+          },
+          {
+            "id": "respiratory_rate",
+            "type": "number",
+            "label_en": "Respiratory Rate",
+            "label_ar": "معدل التنفس",
+            "unit_en": "breaths/min",
+            "unit_ar": "نفس/دقيقة"
+          },
+          {
+            "id": "oxygen_saturation",
+            "type": "number",
+            "label_en": "O2 Saturation",
+            "label_ar": "تشبع الأكسجين",
+            "unit_en": "%",
+            "unit_ar": "%"
+          },
+          {
+            "id": "general_condition",
+            "type": "radio",
+            "label_en": "General Condition",
+            "label_ar": "الحالة العامة",
+            "options": [
+              { "value": "good", "label_en": "Good", "label_ar": "جيدة" },
+              { "value": "fair", "label_en": "Fair", "label_ar": "متوسطة" },
+              { "value": "poor", "label_en": "Poor", "label_ar": "سيئة" }
+            ]
+          },
+          {
+            "id": "general_overview_heading",
+            "type": "heading",
+            "label_en": "General Overview",
+            "label_ar": "النظرة العامة"
+          },
+          {
+            "id": "consciousness",
+            "type": "radio",
+            "label_en": "Consciousness / Mentality",
+            "label_ar": "الوعي / الحالة العقلية",
+            "options": [
+              { "value": "conscious", "label_en": "Conscious & oriented", "label_ar": "واعٍ ومدرك" },
+              { "value": "confused", "label_en": "Confused", "label_ar": "مشوش" },
+              { "value": "unconscious", "label_en": "Unconscious", "label_ar": "فاقد للوعي" }
+            ]
+          },
+          {
+            "id": "built",
+            "type": "radio",
+            "label_en": "Built",
+            "label_ar": "البنية",
+            "options": [
+              { "value": "average", "label_en": "Average built", "label_ar": "متوسطة" },
+              { "value": "over", "label_en": "Over built", "label_ar": "زائدة" },
+              { "value": "under", "label_en": "Under built", "label_ar": "ضعيفة" }
+            ]
+          },
+          {
+            "id": "general_appearance",
+            "type": "multicheck",
+            "label_en": "General Appearance Findings",
+            "label_ar": "علامات الفحص العام",
+            "items": [
+              { "id": "pallor", "label_en": "Pallor", "label_ar": "الشحوب", "marked_if_negative": true },
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "اليرقان", "marked_if_negative": true },
+              { "id": "cyanosis", "label_en": "Cyanosis", "label_ar": "الزرقة", "marked_if_negative": true },
+              { "id": "clubbing", "label_en": "Clubbing", "label_ar": "تعجر الأصابع", "marked_if_negative": true },
+              { "id": "oedema", "label_en": "Lower limb oedema", "label_ar": "وذمة الطرفين السفليين", "marked_if_negative": true },
+              { "id": "lymphadenopathy", "label_en": "Lymphadenopathy", "label_ar": "اعتلال العقد اللمفية", "marked_if_negative": true },
+              { "id": "earthy_look", "label_en": "Earthy look (Urochrome pigmentation)", "label_ar": "مظهر ترابي (تصبغ اليوروكروم)", "marked_if_negative": true },
+              { "id": "scratching_marks", "label_en": "Scratching marks (Pruritus)", "label_ar": "آثار حك (حكة)", "marked_if_negative": true },
+              { "id": "halitosis", "label_en": "Halitosis (Uremic odour)", "label_ar": "رائحة فم كريهة (رائحة يوريمية)", "marked_if_negative": true },
+              { "id": "coated_tongue", "label_en": "White coated tongue", "label_ar": "لسان أبيض مغطى", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "system_examination",
+        "title_en": "System Examination",
+        "title_ar": "فحص الجهاز",
+        "questions": [
+          {
+            "id": "chest_heading",
+            "type": "heading",
+            "label_en": "Chest Examination",
+            "label_ar": "فحص الصدر"
+          },
+          {
+            "id": "chest_inspection",
+            "type": "textarea",
+            "label_en": "Inspection (Observe for Kussmaul breathing)",
+            "label_ar": "الفحص بالنظر (ملاحظة تنفس كوسماول)"
+          },
+          {
+            "id": "chest_palpation",
+            "type": "textarea",
+            "label_en": "Palpation",
+            "label_ar": "الفحص بالجس"
+          },
+          {
+            "id": "chest_percussion",
+            "type": "textarea",
+            "label_en": "Percussion",
+            "label_ar": "الفحص بالقرع"
+          },
+          {
+            "id": "chest_auscultation",
+            "type": "textarea",
+            "label_en": "Auscultation (Rhonchi, Pleural Rub, Pericardial Rub)",
+            "label_ar": "الفحص بالسماع (أزيز، احتكاك جنبي، احتكاك تاموري)"
+          },
+          {
+            "id": "abdomen_heading",
+            "type": "heading",
+            "label_en": "Abdominal Examination",
+            "label_ar": "فحص البطن"
+          },
+          {
+            "id": "abdomen_inspection",
+            "type": "textarea",
+            "label_en": "Inspection",
+            "label_ar": "الفحص بالنظر"
+          },
+          {
+            "id": "abdomen_palpation",
+            "type": "textarea",
+            "label_en": "Palpation (Examine muscles, Ballot kidneys)",
+            "label_ar": "الفحص بالجس (فحص العضلات، جس الكلى)"
+          },
+          {
+            "id": "neuro_heading",
+            "type": "heading",
+            "label_en": "Neurological Examination",
+            "label_ar": "الفحص العصبي"
+          },
+          {
+            "id": "neuro_findings",
+            "type": "textarea",
+            "label_en": "Neurological Findings (Asterixis, PN, Hypothesis)",
+            "label_ar": "النتائج العصبية (الرعاش الأرقطي، اعتلال الأعصاب الطرفية، نقط الحس)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "renal_oedema",
+    "specialty": "internal",
+    "icon": "💧",
+    "name_en": "Generalized Oedema (Renal)",
+    "name_ar": "الوذمة المعممة (كلوية)",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "patient_name",
+            "type": "text",
+            "label_en": "Name",
+            "label_ar": "الاسم",
+            "required": true
+          },
+          {
+            "id": "age",
+            "type": "number",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true
+          },
+          {
+            "id": "sex",
+            "type": "radio",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ]
+          },
+          {
+            "id": "occupation",
+            "type": "text",
+            "label_en": "Occupation",
+            "label_ar": "المهنة"
+          },
+          {
+            "id": "marital_state",
+            "type": "radio",
+            "label_en": "Marital State",
+            "label_ar": "الحالة الاجتماعية",
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل" }
+            ]
+          },
+          {
+            "id": "residence",
+            "type": "radio",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "menstrual_history",
+            "type": "textarea",
+            "label_en": "Menstrual History (if female)",
+            "label_ar": "التاريخ الطمثي (إن وجد)"
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "complaint",
+            "type": "multicheck",
+            "label_en": "Complaint",
+            "label_ar": "الشكوى",
+            "required": true,
+            "items": [
+              { "id": "puffy_eyelids", "label_en": "Puffiness of eyelids", "label_ar": "تورم الجفون", "marked_if_negative": true },
+              { "id": "body_swelling", "label_en": "Generalized body swelling", "label_ar": "تورم الجسم المعمم", "marked_if_negative": true },
+              { "id": "abdominal_distention", "label_en": "Abdominal distention", "label_ar": "انتفاخ البطن", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "duration_value",
+            "type": "number",
+            "label_en": "Duration",
+            "label_ar": "المدة",
+            "unit_en": "duration",
+            "unit_ar": "مدة",
+            "required": true
+          },
+          {
+            "id": "duration_unit",
+            "type": "radio",
+            "label_en": "Duration Unit",
+            "label_ar": "وحدة المدة",
+            "required": true,
+            "options": [
+              { "value": "days", "label_en": "Days", "label_ar": "أيام" },
+              { "value": "weeks", "label_en": "Weeks", "label_ar": "أسابيع" },
+              { "value": "months", "label_en": "Months", "label_ar": "أشهر" },
+              { "value": "years", "label_en": "Years", "label_ar": "سنوات" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Presenting Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "onset",
+            "type": "radio",
+            "label_en": "Onset",
+            "label_ar": "البداية",
+            "options": [
+              { "value": "sudden", "label_en": "Sudden", "label_ar": "مفاجئة" },
+              { "value": "gradual", "label_en": "Gradual", "label_ar": "تدريجية" }
+            ]
+          },
+          {
+            "id": "course",
+            "type": "radio",
+            "label_en": "Course",
+            "label_ar": "السير",
+            "options": [
+              { "value": "progressive", "label_en": "Progressive", "label_ar": "تقدمي" },
+              { "value": "intermittent", "label_en": "Intermittent / Episodic", "label_ar": "متقطع / نوبي" },
+              { "value": "stationary", "label_en": "Stationary", "label_ar": "ثابت" },
+              { "value": "regressive", "label_en": "Regressive", "label_ar": "متراجع" }
+            ]
+          },
+          {
+            "id": "oedema_distribution",
+            "type": "multicheck",
+            "label_en": "Oedema Distribution & Character",
+            "label_ar": "توزيع وطبيعة الوذمة",
+            "items": [
+              { "id": "periorbital", "label_en": "Started periorbital", "label_ar": "بدأت حول العين", "marked_if_negative": true },
+              { "id": "sacral", "label_en": "Sacral area", "label_ar": "منطقة العجز", "marked_if_negative": true },
+              { "id": "genitalia", "label_en": "Genitalia", "label_ar": "الأعضاء التناسلية", "marked_if_negative": true },
+              { "id": "lower_limb_pitting", "label_en": "Bilateral pitting lower limb oedema", "label_ar": "وذمة مثقبة بالطرفين السفليين", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "urinary_symptoms",
+            "type": "multicheck",
+            "label_en": "Urinary Symptoms (Same system)",
+            "label_ar": "أعراض بولية (نفس الجهاز)",
+            "items": [
+              { "id": "oliguria", "label_en": "Oliguria (Nephritic)", "label_ar": "قللة البول (تكيسي)", "marked_if_negative": true },
+              { "id": "hematuria", "label_en": "Hematuria (Nephritic)", "label_ar": "بول دموي (تكيسي)", "marked_if_negative": true },
+              { "id": "frothy_urine", "label_en": "Frothy urine (Nephrotic)", "label_ar": "بول رغوي (نفروزي)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "associated_symptoms",
+            "type": "multicheck",
+            "label_en": "Associated Symptoms",
+            "label_ar": "الأعراض المصاحبة",
+            "items": [
+              { "id": "headache_htn", "label_en": "Headache (Hypertension in nephritic)", "label_ar": "صداع (ارتفاع ضغط الدم في التكيسي)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "complications_symptoms",
+            "type": "multicheck",
+            "label_en": "Symptoms of Complications (Infections / Peritonitis)",
+            "label_ar": "أعراض المضاعفات (عدوى / التهاب بريتون)",
+            "items": [
+              { "id": "chest_infection", "label_en": "Chest infection (Fever, dyspnea)", "label_ar": "عدوى صدرية (حمى، ضيق نفس)", "marked_if_negative": true },
+              { "id": "skin_infection", "label_en": "Skin infection", "label_ar": "عدوى جلدية", "marked_if_negative": true },
+              { "id": "uti", "label_en": "UTI (Dysuria)", "label_ar": "التهاب مجاري بولية (حرقة بول)", "marked_if_negative": true },
+              { "id": "abdominal_pain_vomiting", "label_en": "Abdominal pain & vomiting (Peritonitis / GIT congestion)", "label_ar": "ألم بطني وقيء (التهاب بريتون / احتقان الجهاز الهضمي)", "marked_if_negative": true },
+              { "id": "rash_arthritis", "label_en": "Rash & arthritis (Lupus nephritis / HSP)", "label_ar": "طفح جلدي والتهاب مفاصل (الذئبة / فرفرية شونلاين هينوخ)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "other_systems_exclusion",
+            "type": "multicheck",
+            "label_en": "Symptoms of other systems (Exclude other causes of edema)",
+            "label_ar": "أعراض أجهزة أخرى (لاستبعاد أسباب أخرى للوذمة)",
+            "items": [
+              { "id": "cardiac_symptoms", "label_en": "Cardiac symptoms (Dyspnea, orthopnea, chest pain)", "label_ar": "أعراض قلبية (ضيق نفس، ت Orthopnea، ألم صدر)", "marked_if_negative": true },
+              { "id": "hepatic_symptoms", "label_en": "Hepatic symptoms (Jaundice, ascites, ascites)", "label_ar": "أعراض كبدية (يرقان، استسقاء)", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "treatment_history",
+            "type": "textarea",
+            "label_en": "Investigations & Treatment (e.g., Steroids, Immunosuppressive)",
+            "label_ar": "الفحوصات والعلاج (مثل الستيرويدات، مثبطات المناعة)"
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ المرضي السابق",
+        "questions": [
+          {
+            "id": "previous_attacks",
+            "type": "checkbox",
+            "label_en": "Previous similar attacks (Relapse of Nephrotic Syndrome)",
+            "label_ar": "نوبات سابقة مشابهة (انتكاس المتلازمة النفروزية)",
+            "marked_if_negative": true
+          },
+          {
+            "id": "chronic_diseases",
+            "type": "multicheck",
+            "label_en": "History of Chronic Diseases",
+            "label_ar": "تاريخ الأمراض المزمنة",
+            "items": [
+              { "id": "dm", "label_en": "Diabetes Mellitus", "label_ar": "السكري", "marked_if_negative": true },
+              { "id": "htn", "label_en": "Hypertension", "label_ar": "ارتفاع ضغط الدم", "marked_if_negative": true },
+              { "id": "sle", "label_en": "SLE / Collagen diseases", "label_ar": "الذئبة الحمراء / أمراض الكولاجين", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drug_history",
+        "title_en": "Drug History",
+        "title_ar": "تاريخ الأدوية",
+        "questions": [
+          {
+            "id": "current_medications",
+            "type": "textarea",
+            "label_en": "Current Medications (Include steroids or immunosuppressives)",
+            "label_ar": "الأدوية الحالية (تشمل الستيرويدات أو مثبطات المناعة)"
+          },
+          {
+            "id": "drug_allergy",
+            "type": "checkbox",
+            "label_en": "Drug allergy",
+            "label_ar": "حساسية دوائية",
+            "marked_if_negative": true
+          },
+          {
+            "id": "compliance",
+            "type": "radio",
+            "label_en": "Compliance",
+            "label_ar": "الالتزام بالدواء",
+            "options": [
+              { "value": "regular", "label_en": "Regular", "label_ar": "منتظم" },
+              { "value": "irregular", "label_en": "Irregular", "label_ar": "غير منتظم" },
+              { "value": "stopped", "label_en": "Stopped", "label_ar": "متوقف" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "family_disease",
+            "type": "checkbox",
+            "label_en": "Family history of similar condition or renal disease",
+            "label_ar": "تاريخ عائلي لحالة مشابهة أو أمراض كلوية",
+            "marked_if_negative": true
+          }
+        ]
+      },
+      {
+        "id": "social_history",
+        "title_en": "Social History",
+        "title_ar": "التاريخ الاجتماعي",
+        "questions": [
+          {
+            "id": "smoking",
+            "type": "checkbox",
+            "label_en": "Smoking",
+            "label_ar": "التدخين",
+            "marked_if_negative": true
+          },
+          {
+            "id": "smoking_pack_years",
+            "type": "number",
+            "label_en": "Smoking pack-years",
+            "label_ar": "مؤشر التدخين (عبوة-سنة)",
+            "unit_en": "pack-years",
+            "unit_ar": "عبوة-سنة"
+          },
+          {
+            "id": "alcohol",
+            "type": "checkbox",
+            "label_en": "Alcohol consumption",
+            "label_ar": "تناول الكحول"
+          },
+          {
+            "id": "occupation_exposure",
+            "type": "text",
+            "label_en": "Occupation (relevant exposure)",
+            "label_ar": "المهنة (التعرض ذو الصلة)"
+          },
+          {
+            "id": "residence_type",
+            "type": "radio",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "options": [
+              { "value": "urban", "label_en": "Urban", "label_ar": "حضر" },
+              { "value": "rural", "label_en": "Rural", "label_ar": "ريف" }
+            ]
+          },
+          {
+            "id": "socioeconomic_state",
+            "type": "textarea",
+            "label_en": "Socioeconomic state",
+            "label_ar": "الحالة الاجتماعية والاقتصادية"
+          }
+        ]
+      },
+      {
+        "id": "systemic_review",
+        "title_en": "Systemic Review",
+        "title_ar": "المراجعة الجهازية",
+        "questions": [
+          {
+            "id": "system_symptoms",
+            "type": "multicheck",
+            "label_en": "System Symptoms",
+            "label_ar": "أعراض الجهاز",
+            "items": [
+              { "id": "fever", "label_en": "Fever (Infection)", "label_ar": "حمى (عدوى)", "marked_if_negative": true },
+              { "id": "dysuria", "label_en": "Dysuria (UTI)", "label_ar": "حرقة بول (التهاب مجاري بولية)", "marked_if_negative": true },
+              { "id": "abdominal_pain", "label_en": "Abdominal pain (Peritonitis)", "label_ar": "ألم بطني (التهاب بريتون)", "marked_if_negative": true },
+              { "id": "rash_arthritis", "label_en": "Rash, arthritis (Lupus / HSP)", "label_ar": "طفح جلدي، التهاب مفاصل (ذئبة / فرفرية)", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Examination",
+        "title_ar": "الفحص العام",
+        "questions": [
+          {
+            "id": "vital_signs_heading",
+            "type": "heading",
+            "label_en": "Vital Signs",
+            "label_ar": "العلامات الحيوية"
+          },
+          {
+            "id": "pulse_rate",
+            "type": "number",
+            "label_en": "Pulse Rate",
+            "label_ar": "معدل النبض",
+            "unit_en": "beats/min",
+            "unit_ar": "نبضة/دقيقة"
+          },
+          {
+            "id": "blood_pressure_systolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Systolic (Normal in nephrotic, High in nephritic)",
+            "label_ar": "ضغط الدم - الانقباضي (طبيعي في النفروزي، مرتفع في التكيسي)",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "blood_pressure_diastolic",
+            "type": "number",
+            "label_en": "Blood Pressure - Diastolic",
+            "label_ar": "ضغط الدم - الانبساطي",
+            "unit_en": "mmHg",
+            "unit_ar": "ملم زئبق"
+          },
+          {
+            "id": "temperature",
+            "type": "number",
+            "label_en": "Temperature",
+            "label_ar": "درجة الحرارة",
+            "unit_en": "°C",
+            "unit_ar": "°م"
+          },
+          {
+            "id": "respiratory_rate",
+            "type": "number",
+            "label_en": "Respiratory Rate",
+            "label_ar": "معدل التنفس",
+            "unit_en": "breaths/min",
+            "unit_ar": "نفس/دقيقة"
+          },
+          {
+            "id": "oxygen_saturation",
+            "type": "number",
+            "label_en": "O2 Saturation",
+            "label_ar": "تشبع الأكسجين",
+            "unit_en": "%",
+            "unit_ar": "%"
+          },
+          {
+            "id": "general_condition",
+            "type": "radio",
+            "label_en": "General Condition",
+            "label_ar": "الحالة العامة",
+            "options": [
+              { "value": "good", "label_en": "Good", "label_ar": "جيدة" },
+              { "value": "fair", "label_en": "Fair", "label_ar": "متوسطة" },
+              { "value": "poor", "label_en": "Poor", "label_ar": "سيئة" }
+            ]
+          },
+          {
+            "id": "general_overview_heading",
+            "type": "heading",
+            "label_en": "General Overview",
+            "label_ar": "النظرة العامة"
+          },
+          {
+            "id": "consciousness",
+            "type": "radio",
+            "label_en": "Consciousness / Mentality",
+            "label_ar": "الوعي / الحالة العقلية",
+            "options": [
+              { "value": "conscious", "label_en": "Conscious & oriented", "label_ar": "واعٍ ومدرك" },
+              { "value": "confused", "label_en": "Confused", "label_ar": "مشوش" },
+              { "value": "unconscious", "label_en": "Unconscious", "label_ar": "فاقد للوعي" }
+            ]
+          },
+          {
+            "id": "built",
+            "type": "radio",
+            "label_en": "Built",
+            "label_ar": "البنية",
+            "options": [
+              { "value": "average", "label_en": "Average built", "label_ar": "متوسطة" },
+              { "value": "over", "label_en": "Over built", "label_ar": "زائدة" },
+              { "value": "under", "label_en": "Under built", "label_ar": "ضعيفة" }
+            ]
+          },
+          {
+            "id": "general_appearance",
+            "type": "multicheck",
+            "label_en": "General Appearance Findings",
+            "label_ar": "علامات الفحص العام",
+            "items": [
+              { "id": "puffy_eyelids", "label_en": "Puffy eyelids", "label_ar": "تورم الجفون", "marked_if_negative": true },
+              { "id": "pallor", "label_en": "Pallor", "label_ar": "الشحوب", "marked_if_negative": true },
+              { "id": "xanthomata", "label_en": "Xanthomata (Hyperlipidemia)", "label_ar": "الأورام الصفراء (فرط شحوم الدم)", "marked_if_negative": true },
+              { "id": "cushinoid_features", "label_en": "Cushinoid features (Steroid treatment)", "label_ar": "سمات كوشينغ (علاج ستيرويد)", "marked_if_negative": true },
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "اليرقان", "marked_if_negative": true },
+              { "id": "cyanosis", "label_en": "Cyanosis", "label_ar": "الزرقة", "marked_if_negative": true },
+              { "id": "clubbing", "label_en": "Clubbing", "label_ar": "تعجر الأصابع", "marked_if_negative": true },
+              { "id": "oedema", "label_en": "Lower limb oedema (Bilateral pitting, not tender)", "label_ar": "وذمة الطرفين السفليين (مثقبة ثنائية الجانب، غير مؤلمة)", "marked_if_negative": true },
+              { "id": "lymphadenopathy", "label_en": "Lymphadenopathy", "label_ar": "اعتلال العقد اللمفية", "marked_if_negative": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "system_examination",
+        "title_en": "System Examination",
+        "title_ar": "فحص الجهاز",
+        "questions": [
+          {
+            "id": "abdomen_heading",
+            "type": "heading",
+            "label_en": "Abdominal Examination",
+            "label_ar": "فحص البطن"
+          },
+          {
+            "id": "inspection_heading",
+            "type": "heading",
+            "label_en": "Inspection",
+            "label_ar": "الفحص بالنظر"
+          },
+          {
+            "id": "abdomen_inspection_findings",
+            "type": "textarea",
+            "label_en": "Inspection Findings (Generalized distention, stretched skin, visible veins, divarication of recti, wide subcostal angle)",
+            "label_ar": "نتائج الفحص بالنظر (انتفاخ معمم، جلد مشدود، أوردة ظاهرة، تباعد المستقيم، زاوية تحت ضلعية واسعة)"
+          },
+          {
+            "id": "palpation_heading",
+            "type": "heading",
+            "label_en": "Palpation",
+            "label_ar": "الفحص بالجس"
+          },
+          {
+            "id": "palpation_findings",
+            "type": "textarea",
+            "label_en": "Palpation Findings (Tender & rigid abdomen suspect peritonitis)",
+            "label_ar": "نتائج الجس (بطن متصلب ومؤلم يثير الشك بالتهاب البريتون)"
+          },
+          {
+            "id": "percussion_heading",
+            "type": "heading",
+            "label_en": "Percussion",
+            "label_ar": "الفحص بالقرع"
+          },
+          {
+            "id": "percussion_findings",
+            "type": "textarea",
+            "label_en": "Percussion Findings (Ascites examination)",
+            "label_ar": "نتائج القرع (فحص الاستسقاء)"
+          },
+          {
+            "id": "auscultation_heading",
+            "type": "heading",
+            "label_en": "Auscultation",
+            "label_ar": "الفحص بالسماع"
+          },
+          {
+            "id": "auscultation_findings",
+            "type": "textarea",
+            "label_en": "Auscultation Findings",
+            "label_ar": "نتائج السماع"
+          },
+          {
+            "id": "genitalia_heading",
+            "type": "heading",
+            "label_en": "Genitalia",
+            "label_ar": "الأعضاء التناسلية"
+          },
+          {
+            "id": "genitalia_findings",
+            "type": "textarea",
+            "label_en": "Genitalia Findings (Scrotal edema)",
+            "label_ar": "نتائج الأعضاء التناسلية (تورم الصفن)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "varicose_veins",
+    "specialty": "surgery",
+    "icon": "🦵",
+    "name_en": "Varicose Veins",
+    "name_ar": "الدوالي",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "name",
+            "label_en": "Name",
+            "label_ar": "الاسم",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "age",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "type": "number",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true,
+            "write_up_hint": "The patient is {value} years old."
+          },
+          {
+            "id": "sex",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ]
+          },
+          {
+            "id": "marital_status",
+            "label_en": "Marital Status",
+            "label_ar": "الحالة الاجتماعية",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب/عزباء" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج/ة" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق/ة" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل/ة" }
+            ]
+          },
+          {
+            "id": "occupation",
+            "label_en": "Occupation",
+            "label_ar": "المهنة",
+            "type": "text",
+            "required": false,
+            "write_up_hint": "Occupation: {value}."
+          },
+          {
+            "id": "address",
+            "label_en": "Address",
+            "label_ar": "العنوان",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "residence",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "special_habits",
+            "label_en": "Special Habits of Medical Importance",
+            "label_ar": "العادات الخاصة ذات الأهمية الطبية",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "menstrual_history",
+            "label_en": "Menstrual History",
+            "label_ar": "تاريخ الدورة الشهرية",
+            "type": "textarea",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "presenting_complaint",
+            "label_en": "Presenting Complaint",
+            "label_ar": "الشكوى الرئيسية",
+            "type": "text",
+            "required": true,
+            "write_up_hint": "Presented with {value}."
+          },
+          {
+            "id": "complaint_duration",
+            "label_en": "Duration",
+            "label_ar": "المدة",
+            "type": "text",
+            "required": true,
+            "write_up_hint": "Of {value} duration."
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Presenting Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "onset",
+            "label_en": "Onset",
+            "label_ar": "بداية المرض",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "sudden", "label_en": "Sudden", "label_ar": "مفاجئ" },
+              { "value": "gradual", "label_en": "Gradual", "label_ar": "تدريجي" }
+            ]
+          },
+          {
+            "id": "course",
+            "label_en": "Course",
+            "label_ar": "مسار المرض",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "progressive", "label_en": "Progressive", "label_ar": "تدريجي التدهور" },
+              { "value": "static", "label_en": "Static", "label_ar": "ثابت" },
+              { "value": "relapsing_remitting", "label_en": "Relapsing & Remitting", "label_ar": "ناكس ومتراجع" }
+            ]
+          },
+          {
+            "id": "initial_site",
+            "label_en": "Initial Site of Appearance",
+            "label_ar": "موقع الظهور الأولي",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "proximal", "label_en": "Proximal", "label_ar": "قريب" },
+              { "value": "distal", "label_en": "Distal", "label_ar": "بعيد" }
+            ]
+          },
+          {
+            "id": "laterality",
+            "label_en": "Laterality",
+            "label_ar": "الجانب",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "unilateral", "label_en": "Unilateral", "label_ar": "أحادي الجانب" },
+              { "value": "bilateral", "label_en": "Bilateral", "label_ar": "ثنائي الجانب" }
+            ]
+          },
+          {
+            "id": "varicosities_elsewhere",
+            "label_en": "Varicosities Observed Elsewhere",
+            "label_ar": "دوالي في أماكن أخرى",
+            "type": "multicheck",
+            "items": [
+              { "id": "abdominal_wall", "label_en": "Abdominal Wall", "label_ar": "جدار البطن", "marked_if_negative": false },
+              { "id": "genitalia", "label_en": "Genitalia", "label_ar": "الأعضاء التناسلية", "marked_if_negative": false },
+              { "id": "buttocks", "label_en": "Buttocks", "label_ar": "الأرداف", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "previous_direct_trauma",
+            "label_en": "History of Previous Direct Trauma",
+            "label_ar": "تاريخ إصابة مباشرة سابقة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "limb_pain",
+            "label_en": "Pain in the Limb",
+            "label_ar": "ألم في الطرف",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "pain_character",
+            "label_en": "Pain Character",
+            "label_ar": "طبيعة الألم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "aching", "label_en": "Aching", "label_ar": "ألم حاد" },
+              { "value": "bursting", "label_en": "Bursting", "label_ar": "شبيه بالانفجار" },
+              { "value": "throbbing", "label_en": "Throbbing", "label_ar": "نابض" },
+              { "value": "burning", "label_en": "Burning", "label_ar": "حارق" }
+            ]
+          },
+          {
+            "id": "pain_location",
+            "label_en": "Pain Location",
+            "label_ar": "موقع الألم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "calf", "label_en": "Calf", "label_ar": "الساق" },
+              { "value": "ankle", "label_en": "Ankle", "label_ar": "الكاحل" }
+            ]
+          },
+          {
+            "id": "pain_initiated_by",
+            "label_en": "Pain Initiated By",
+            "label_ar": "يبدأ الألم بسببه",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "prolonged_standing", "label_en": "Prolonged Standing", "label_ar": "الوقوف لفترة طويلة" },
+              { "value": "short_standing", "label_en": "Short Standing", "label_ar": "الوقوف لفترة قصيرة" }
+            ]
+          },
+          {
+            "id": "pain_relation_to_walking",
+            "label_en": "Pain Relation to Walking",
+            "label_ar": "علاقة الألم بالمشي",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "improved", "label_en": "Improved", "label_ar": "يتحسن" },
+              { "value": "worsened", "label_en": "Worsened", "label_ar": "يزداد سوءاً" }
+            ]
+          },
+          {
+            "id": "pain_relieved_by",
+            "label_en": "Pain Relieved By",
+            "label_ar": "يخف الألم بسببه",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "lying_flat_elevation", "label_en": "Lying Flat with Elevation", "label_ar": "الاستلقاء مع رفع الطرف" },
+              { "value": "lying_flat", "label_en": "Lying Flat", "label_ar": "الاستلقاء" }
+            ]
+          },
+          {
+            "id": "pain_accompanied_by_edema",
+            "label_en": "Pain Accompanied by Edema",
+            "label_ar": "يصاحب الألم وذمة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "history_dvt",
+            "label_en": "History of Acute Massive Swollen Painful Limb (DVT)",
+            "label_ar": "تاريخ تخثر وريدي عميق (DVT)",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "prolonged_immobilization",
+            "label_en": "History of Prolonged Immobilization",
+            "label_ar": "تاريخ عدم حركة لفترة طويلة",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "immobilization_reason",
+            "label_en": "Reason for Immobilization",
+            "label_ar": "سبب عدم الحركة",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "congenital_troubles_females",
+            "label_en": "Congenital Troubles (Females)",
+            "label_ar": "مشاكل خلقية (للإناث)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ المرضي السابق",
+        "questions": [
+          {
+            "id": "congenital_mesenchymal_weakness",
+            "label_en": "History Suggestive of Congenital Mesenchymal Weakness",
+            "label_ar": "تاريخ ضعف خلقي في النسيج الضام",
+            "type": "multicheck",
+            "items": [
+              { "id": "varicocele", "label_en": "Varicocele", "label_ar": "دوالي الخصية", "marked_if_negative": true },
+              { "id": "piles", "label_en": "Piles", "label_ar": "بواسير", "marked_if_negative": true },
+              { "id": "flat_foot", "label_en": "Flat Foot", "label_ar": "قدم مسطحة", "marked_if_negative": true },
+              { "id": "hernias", "label_en": "Hernias", "label_ar": "فتق", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "pelvic_abdominal_swelling",
+            "label_en": "History of Pelvic or Abdominal Swelling",
+            "label_ar": "تاريخ تورم في الحوض أو البطن",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "trauma_av_fistula",
+            "label_en": "History of Trauma (A-V Fistula)",
+            "label_ar": "تاريخ إصابة (ناسور شرياني وريدي)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "abortion",
+            "label_en": "History of Abortion",
+            "label_ar": "تاريخ إجهاض",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "puerperal_sepsis",
+            "label_en": "History of Puerperal Sepsis",
+            "label_ar": "تاريخ حمى النفاس",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "similar_condition_recurrence",
+            "label_en": "Similar Conditions or Recurrence",
+            "label_ar": "حالات مشابهة أو انتكاس",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "common_diseases",
+            "label_en": "Common Diseases",
+            "label_ar": "أمراض شائعة",
+            "type": "multicheck",
+            "items": [
+              { "id": "dm", "label_en": "DM", "label_ar": "السكر", "marked_if_negative": false },
+              { "id": "hypertension", "label_en": "Hypertension", "label_ar": "ضغط الدم", "marked_if_negative": false },
+              { "id": "tb", "label_en": "TB", "label_ar": "الدرن", "marked_if_negative": false },
+              { "id": "bronchitis", "label_en": "Bronchitis", "label_ar": "التهاب الشعب", "marked_if_negative": false },
+              { "id": "hepatitis", "label_en": "Hepatitis", "label_ar": "التهاب الكبد", "marked_if_negative": false },
+              { "id": "dvt", "label_en": "DVT", "label_ar": "تخثر وريدي عميق", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "blood_transfusion",
+            "label_en": "History of Blood Transfusion",
+            "label_ar": "تاريخ نقل دم",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "previous_operation",
+            "label_en": "Past History of Previous Operation",
+            "label_ar": "تاريخ عمليات سابقة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "previous_operation_details",
+            "label_en": "Details of Previous Operation",
+            "label_ar": "تفاصيل العملية السابقة",
+            "type": "textarea",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "drug_history",
+        "title_en": "Drug History",
+        "title_ar": "تاريخ الأدوية",
+        "questions": [
+          {
+            "id": "drug_allergy_intake",
+            "label_en": "Drug Allergy & Intake",
+            "label_ar": "حساسية الأدوية والتناول",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "contraceptive_pills",
+            "label_en": "Contraceptive Pills",
+            "label_ar": "حبوب منع الحمل",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "intrauterine_device",
+            "label_en": "Intrauterine Device (Loops)",
+            "label_ar": "اللولب الرحمي",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "similar_condition_family",
+            "label_en": "Similar Condition in Family Members",
+            "label_ar": "حالة مشابهة في أفراد العائلة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "consanguinity",
+            "label_en": "Consanguinity",
+            "label_ar": "قرابة الوالدين",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Examination",
+        "title_ar": "الفحص العام",
+        "questions": [
+          {
+            "id": "conscious_level",
+            "label_en": "Conscious Level",
+            "label_ar": "مستوى الوعي",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "alert", "label_en": "Alert", "label_ar": "منتبه" },
+              { "value": "drowsy", "label_en": "Drowsy", "label_ar": "نعسان" },
+              { "value": "unconscious", "label_en": "Unconscious", "label_ar": "فاقد الوعي" }
+            ]
+          },
+          {
+            "id": "orientation",
+            "label_en": "Orientation",
+            "label_ar": "التوجيه",
+            "type": "multicheck",
+            "items": [
+              { "id": "time", "label_en": "Time", "label_ar": "الزمان", "marked_if_negative": false },
+              { "id": "place", "label_en": "Place", "label_ar": "المكان", "marked_if_negative": false },
+              { "id": "persons", "label_en": "Persons", "label_ar": "الأشخاص", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "body_built",
+            "label_en": "Body Built",
+            "label_ar": "بنية الجسم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "average", "label_en": "Average", "label_ar": "متوسط" },
+              { "value": "underweight", "label_en": "Underweight", "label_ar": "نحيف" },
+              { "value": "obese", "label_en": "Obese", "label_ar": "سمين" }
+            ]
+          },
+          {
+            "id": "facial_expression",
+            "label_en": "Facial Expression",
+            "label_ar": "تعبيرات الوجه",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "quiet", "label_en": "Quiet", "label_ar": "هادئ" },
+              { "value": "anxious", "label_en": "Anxious", "label_ar": "قلق" },
+              { "value": "in_pain", "label_en": "In Pain", "label_ar": "متألم" }
+            ]
+          },
+          {
+            "id": "decubitus",
+            "label_en": "Decubitus",
+            "label_ar": "وضعية المريض",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "normal", "label_en": "Normal", "label_ar": "طبيعي" },
+              { "value": "abnormal", "label_en": "Abnormal", "label_ar": "غير طبيعي" }
+            ]
+          },
+          {
+            "id": "complexion",
+            "label_en": "Complexion",
+            "label_ar": "لون البشرة",
+            "type": "multicheck",
+            "items": [
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "يرقان", "marked_if_negative": false },
+              { "id": "pallor", "label_en": "Pallor", "label_ar": "شحوب", "marked_if_negative": false },
+              { "id": "cyanosis", "label_en": "Cyanosis", "label_ar": "زرقة", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "chest_heart",
+            "label_en": "Chest & Heart",
+            "label_ar": "الصدر والقلب",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "abdomen_examination",
+            "label_en": "Abdomen",
+            "label_ar": "البطن",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "back_examination",
+            "label_en": "Back",
+            "label_ar": "الظهر",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "scrotum_examination",
+            "label_en": "Scrotum",
+            "label_ar": "كيس الصفن",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "pr_examination",
+            "label_en": "P/R",
+            "label_ar": "فحص المستقيم",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "pulse",
+            "label_en": "Pulse",
+            "label_ar": "النبض",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "water_hammer_pulse",
+            "label_en": "Water-Hammer Pulse",
+            "label_ar": "نبض المطرقة المائية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "branham_sign",
+            "label_en": "Branham's Sign",
+            "label_ar": "علامة برانهام",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "blood_pressure",
+            "label_en": "Blood Pressure",
+            "label_ar": "ضغط الدم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "temperature",
+            "label_en": "Temperature",
+            "label_ar": "الحرارة",
+            "type": "number",
+            "unit_en": "°C",
+            "unit_ar": "°م",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "local_examination",
+        "title_en": "Local Examination",
+        "title_ar": "الفحص الموضعي",
+        "questions": [
+          {
+            "id": "exposure_heading",
+            "label_en": "Exposure",
+            "label_ar": "الكشف",
+            "type": "heading"
+          },
+          {
+            "id": "exposure_adequacy",
+            "label_en": "Exposure (from Umbilicus Downward)",
+            "label_ar": "الكشف (من السرة للأسفل)",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "inspection_heading",
+            "label_en": "Inspection",
+            "label_ar": "الفحص البصري",
+            "type": "heading"
+          },
+          {
+            "id": "limb_symmetry",
+            "label_en": "Limb Symmetry",
+            "label_ar": "تماثل الأطراف",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "symmetrical", "label_en": "Symmetrical", "label_ar": "متماثل" },
+              { "value": "asymmetrical", "label_en": "Asymmetrical (Local Gigantism)", "label_ar": "غير متماثل (ضخامة موضعية)" }
+            ]
+          },
+          {
+            "id": "localized_swelling",
+            "label_en": "Localized Swelling",
+            "label_ar": "تورم موضعي",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "swelling_type",
+            "label_en": "Type of Swelling",
+            "label_ar": "نوع التورم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "blow_out", "label_en": "Blow Out", "label_ar": "انتفاخ" },
+              { "value": "dilated_vein", "label_en": "Dilated Vein", "label_ar": "وريد متسع" }
+            ]
+          },
+          {
+            "id": "dilated_vein_location",
+            "label_en": "Location of Dilated Vein",
+            "label_ar": "موقع الوريد المتسع",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "medial_thigh", "label_en": "Medial side of thigh (Long Saphenous)", "label_ar": "الجانب الداخلي للفخذ (الوريد الصافن الطويل)" },
+              { "value": "lateral_thigh", "label_en": "Lateral side of thigh (Short Saphenous)", "label_ar": "الجانب الخارجي للفخذ (الوريد الصافن القصير)" }
+            ]
+          },
+          {
+            "id": "varicosity_shape",
+            "label_en": "Shape of Varicosities",
+            "label_ar": "شكل الدوالي",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "mild_tubular", "label_en": "Mild Tubular", "label_ar": "أنبوبي خفيف" },
+              { "value": "tubular", "label_en": "Tubular", "label_ar": "أنبوبي" },
+              { "value": "serpentine", "label_en": "Serpentine", "label_ar": "متعرج" },
+              { "value": "saccular", "label_en": "Saccular (Blow Out)", "label_ar": "كيسي (انتفاخ)" }
+            ]
+          },
+          {
+            "id": "saccular_location",
+            "label_en": "Location of Saccular Varicosity",
+            "label_ar": "موقع الدوالي الكيسية",
+            "type": "multicheck",
+            "items": [
+              { "id": "sfj", "label_en": "Saphenofemoral Junction", "label_ar": "التقاء الصافن والفخذي", "marked_if_negative": false },
+              { "id": "above_knee_perforator", "label_en": "Opposite Incompetent Perforators Above Knee", "label_ar": "مقابل الثقوب غير الكفء فوق الركبة", "marked_if_negative": false },
+              { "id": "below_knee_perforator", "label_en": "Opposite Incompetent Perforators Below Knee", "label_ar": "مقابل الثقوب غير الكفء تحت الركبة", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "ankle_findings",
+            "label_en": "Ankle Findings",
+            "label_ar": "نتائج الكاحل",
+            "type": "multicheck",
+            "items": [
+              { "id": "pigmentation", "label_en": "Brownish Pigmentation", "label_ar": "تصبغ بني", "marked_if_negative": true },
+              { "id": "eczema", "label_en": "Eczema", "label_ar": "إكزيما", "marked_if_negative": true },
+              { "id": "ulcer", "label_en": "Ulcer", "label_ar": "قرحة", "marked_if_negative": true }
+            ]
+          },
+          {
+            "id": "ulcer_description",
+            "label_en": "Ulcer Description",
+            "label_ar": "وصف القرحة",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "foot_findings",
+            "label_en": "Foot Findings",
+            "label_ar": "نتائج القدم",
+            "type": "multicheck",
+            "items": [
+              { "id": "flat_foot", "label_en": "Flat Foot", "label_ar": "قدم مسطحة", "marked_if_negative": true },
+              { "id": "local_gigantism", "label_en": "Local Gigantism", "label_ar": "ضخامة موضعية", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "limb_edema",
+            "label_en": "Limb Edema",
+            "label_ar": "وذمة الطرف",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "overlying_skin_normal",
+            "label_en": "Overlying Skin Normal",
+            "label_ar": "الجلد المغطي طبيعي",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "skin_abnormalities",
+            "label_en": "Skin Abnormalities",
+            "label_ar": "تشوهات الجلد",
+            "type": "multicheck",
+            "items": [
+              { "id": "ulcer", "label_en": "Ulcer", "label_ar": "قرحة", "marked_if_negative": false },
+              { "id": "scar", "label_en": "Scar", "label_ar": "ندبة", "marked_if_negative": false },
+              { "id": "pigmentation", "label_en": "Pigmentation", "label_ar": "تصبغ", "marked_if_negative": false },
+              { "id": "edema", "label_en": "Edema", "label_ar": "وذمة", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "palpation_heading",
+            "label_en": "Palpation",
+            "label_ar": "الجس",
+            "type": "heading"
+          },
+          {
+            "id": "direction_of_filling",
+            "label_en": "Direction of Filling (Groin Veins)",
+            "label_ar": "اتجاه الامتلاء (أوردة الفخذ)",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "thrill_on_coughing",
+            "label_en": "Thrill on Coughing at SFJ",
+            "label_ar": "رعشة عند السعال عند التقاء الصافن والفخذي",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "machinery_thrill",
+            "label_en": "Machinery Thrill over Pulsating Swelling",
+            "label_ar": "رعشة آلية فوق التورم النابض",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "vein_tenderness",
+            "label_en": "Vein Tenderness (Hot, Tender, Cord-like)",
+            "label_ar": "إيلام الوريد (ساخن، مؤلم، حبلي)",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "fascial_defect",
+            "label_en": "Fascial Defect on Palpation",
+            "label_ar": "عيب في اللفافة العميقة عند الجس",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "edema_type",
+            "label_en": "Edema Type",
+            "label_ar": "نوع الوذمة",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "pitting", "label_en": "Pitting", "label_ar": "مؤثرة" },
+              { "value": "non_pitting", "label_en": "Non-Pitting", "label_ar": "غير مؤثرة" }
+            ]
+          },
+          {
+            "id": "draining_lymph_nodes",
+            "label_en": "Draining Lymph Nodes",
+            "label_ar": "العقد اللمفاوية المنزحة",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "percussion_heading",
+            "label_en": "Percussion",
+            "label_ar": "القرع",
+            "type": "heading"
+          },
+          {
+            "id": "schwartz_test",
+            "label_en": "Schwartz Test",
+            "label_ar": "اختبار شوارتز",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "positive", "label_en": "Positive (Incompetent valves)", "label_ar": "إيجابي (صمامات غير كفء)" },
+              { "value": "negative", "label_en": "Negative", "label_ar": "سلبي" }
+            ]
+          },
+          {
+            "id": "chervier_test",
+            "label_en": "Chervier Test",
+            "label_ar": "اختبار شيرفييه",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "positive_long", "label_en": "Positive (Long Saphenous)", "label_ar": "إيجابي (الصافن الطويل)" },
+              { "value": "positive_short", "label_en": "Positive (Short Saphenous)", "label_ar": "إيجابي (الصافن القصير)" },
+              { "value": "negative", "label_en": "Negative", "label_ar": "سلبي" }
+            ]
+          },
+          {
+            "id": "auscultation_heading",
+            "label_en": "Auscultation",
+            "label_ar": "التسمع",
+            "type": "heading"
+          },
+          {
+            "id": "machinery_murmur",
+            "label_en": "Continuous Machinery Murmur",
+            "label_ar": "نفحة آلية مستمرة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "special_tests_heading",
+            "label_en": "Special Tests",
+            "label_ar": "اختبارات خاصة",
+            "type": "heading"
+          },
+          {
+            "id": "trendelenburg_test_1",
+            "label_en": "Trendelenburg Test 1 (Saphenofemoral Incompetence)",
+            "label_ar": "اختبار ترندلينبورغ 1 (قصور الصافن والفخذي)",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "positive", "label_en": "Positive", "label_ar": "إيجابي" },
+              { "value": "negative", "label_en": "Negative", "label_ar": "سلبي" }
+            ]
+          },
+          {
+            "id": "trendelenburg_test_2",
+            "label_en": "Trendelenburg Test 2 (Incompetent Perforator)",
+            "label_ar": "اختبار ترندلينبورغ 2 (ثقب غير كفء)",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "positive", "label_en": "Positive", "label_ar": "إيجابي" },
+              { "value": "negative", "label_en": "Negative", "label_ar": "سلبي" }
+            ]
+          },
+          {
+            "id": "multiple_tourniquet_test",
+            "label_en": "Multiple Tourniquet Test",
+            "label_ar": "اختبار الربط المتعدد",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "manual_localization",
+            "label_en": "Manual Localization of Incompetent Perforators",
+            "label_ar": "تحديد مكان الثقوب غير الكفء يدوياً",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "modified_perthes_test",
+            "label_en": "Modified Perthe's Test (Deep System Patency)",
+            "label_ar": "اختبار بيرثيز المعدل (سلامة الجهاز العميق)",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "veins_disappear", "label_en": "Veins Disappear (Patent Deep System)", "label_ar": "الأوردة تختفي (جهاز عميق سالك)" },
+              { "value": "veins_increased_pain", "label_en": "Veins Increased & Pain (Obstructed Deep System)", "label_ar": "الأوردة تزداد مع ألم (جهاز عميق مسدود)" }
+            ]
+          },
+          {
+            "id": "perthes_test",
+            "label_en": "Perthe's Test (Subjective)",
+            "label_ar": "اختبار بيرثيز (ذاتي)",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "pain", "label_en": "Pain (Occluded Deep System)", "label_ar": "ألم (جهاز عميق مسدود)" },
+              { "value": "no_pain", "label_en": "No Pain", "label_ar": "لا يوجد ألم" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "abdomen",
+    "specialty": "surgery",
+    "icon": "🩺",
+    "name_en": "Abdomen",
+    "name_ar": "البطن",
+    "sections": [
+      {
+        "id": "personal_history",
+        "title_en": "Personal History",
+        "title_ar": "التاريخ الشخصي",
+        "questions": [
+          {
+            "id": "name",
+            "label_en": "Name",
+            "label_ar": "الاسم",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "age",
+            "label_en": "Age",
+            "label_ar": "العمر",
+            "type": "number",
+            "unit_en": "years",
+            "unit_ar": "سنة",
+            "required": true,
+            "write_up_hint": "The patient is {value} years old."
+          },
+          {
+            "id": "sex",
+            "label_en": "Sex",
+            "label_ar": "الجنس",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "value": "male", "label_en": "Male", "label_ar": "ذكر" },
+              { "value": "female", "label_en": "Female", "label_ar": "أنثى" }
+            ]
+          },
+          {
+            "id": "marital_status",
+            "label_en": "Marital Status",
+            "label_ar": "الحالة الاجتماعية",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "single", "label_en": "Single", "label_ar": "أعزب/عزباء" },
+              { "value": "married", "label_en": "Married", "label_ar": "متزوج/ة" },
+              { "value": "divorced", "label_en": "Divorced", "label_ar": "مطلق/ة" },
+              { "value": "widowed", "label_en": "Widowed", "label_ar": "أرمل/ة" }
+            ]
+          },
+          {
+            "id": "special_habits",
+            "label_en": "Special Habits of Medical Importance",
+            "label_ar": "العادات الخاصة ذات الأهمية الطبية",
+            "type": "textarea",
+            "required": false,
+            "write_up_hint": "Special habits: {value}."
+          },
+          {
+            "id": "alcoholism",
+            "label_en": "Alcoholism",
+            "label_ar": "إدمان الكحوليات",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "address",
+            "label_en": "Address",
+            "label_ar": "العنوان",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "residence",
+            "label_en": "Residence",
+            "label_ar": "محل الإقامة",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "occupation",
+            "label_en": "Occupation",
+            "label_ar": "المهنة",
+            "type": "text",
+            "required": false,
+            "write_up_hint": "Occupation: {value}."
+          },
+          {
+            "id": "menstrual_history",
+            "label_en": "Menstrual History",
+            "label_ar": "تاريخ الدورة الشهرية",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "menstrual_irregularity",
+            "label_en": "Menstrual Irregularity",
+            "label_ar": "اضطراب الدورة الشهرية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "contraceptive_pills",
+            "label_en": "Contraceptive Pills Intake",
+            "label_ar": "تناول حبوب منع الحمل",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "presenting_complaint",
+        "title_en": "Presenting Complaint",
+        "title_ar": "الشكوى الرئيسية",
+        "questions": [
+          {
+            "id": "presenting_complaint",
+            "label_en": "Presenting Complaint",
+            "label_ar": "الشكوى الرئيسية",
+            "type": "text",
+            "required": true,
+            "write_up_hint": "Presented with {value}."
+          },
+          {
+            "id": "complaint_duration",
+            "label_en": "Duration",
+            "label_ar": "المدة",
+            "type": "text",
+            "required": true,
+            "write_up_hint": "Of {value} duration."
+          }
+        ]
+      },
+      {
+        "id": "hopi",
+        "title_en": "History of Presenting Illness",
+        "title_ar": "تاريخ المرض الحالي",
+        "questions": [
+          {
+            "id": "pain_heading",
+            "label_en": "Pain",
+            "label_ar": "الألم",
+            "type": "heading"
+          },
+          {
+            "id": "pain_presence",
+            "label_en": "Pain",
+            "label_ar": "الألم",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "pain_site",
+            "label_en": "Site of Pain",
+            "label_ar": "موقع الألم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "epigastric_midline", "label_en": "Epigastrium (Midline - GU)", "label_ar": "شرسوف منتصف الخط (قرحة معدية)" },
+              { "value": "epigastric_right", "label_en": "Epigastrium (Right of midline - DU)", "label_ar": "شرسوف يمين الخط (قرحة اثني عشر)" },
+              { "value": "right_hypochondrium", "label_en": "Right Hypochondrium (GB)", "label_ar": " تحت الضلع الأيمن (مرارة)" },
+              { "value": "periumbilical", "label_en": "Periumbilical (Appendix)", "label_ar": "حول السرة (زائدة)" },
+              { "value": "iliac_fossae", "label_en": "Iliac Fossae / Below Umbilicus (Colon)", "label_ar": "الحفرتين الحرقفيتين / تحت السرة (قولون)" }
+            ]
+          },
+          {
+            "id": "pain_character",
+            "label_en": "Character of Pain",
+            "label_ar": "طبيعة الألم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "colicky", "label_en": "Colicky (Obstruction)", "label_ar": "مغصى (انسداد)" },
+              { "value": "burning", "label_en": "Burning (Reflux/PU)", "label_ar": "حارق (ارتجاع/قرحة)" },
+              { "value": "stabbing", "label_en": "Stabbing (PU)", "label_ar": "طاعن (قرحة)" },
+              { "value": "stitching", "label_en": "Stitching (Perisplenitis)", "label_ar": "خياطي (التهاب حواشي الطحال)" }
+            ]
+          },
+          {
+            "id": "pain_radiation",
+            "label_en": "Radiation of Pain",
+            "label_ar": "انتشار الألم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "right_scapula", "label_en": "Inferior angle of right scapula (GB)", "label_ar": "الزاوية السفلى للكتف الأيمن (مرارة)" },
+              { "value": "back", "label_en": "To the back (Pancreas)", "label_ar": "الظهر (بنكرياس)" },
+              { "value": "genitalia_thigh", "label_en": "External genitalia & upper thigh (Ureteric)", "label_ar": "الأعضاء التناسلية وفخذ أعلى (حالب)" },
+              { "value": "none", "label_en": "No radiation", "label_ar": "لا يوجد انتشار" }
+            ]
+          },
+          {
+            "id": "pain_relation_to_meals",
+            "label_en": "Relation to Meals",
+            "label_ar": "علاقة الألم بالطعام",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "after_fatty_meals", "label_en": "After fatty meals (GB)", "label_ar": "بعد الوجبات الدهنية (مرارة)" },
+              { "value": "after_half_hour", "label_en": "1/2 hour after meal (GU)", "label_ar": "نصف ساعة بعد الأكل (قرحة معدية)" },
+              { "value": "after_two_hours", "label_en": "2 hours after meal (DU)", "label_ar": "ساعتين بعد الأكل (قرحة اثني عشر)" }
+            ]
+          },
+          {
+            "id": "pain_increase",
+            "label_en": "What Increases Pain",
+            "label_ar": "ما يزيد الألم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "pain_decrease",
+            "label_en": "What Decreases Pain",
+            "label_ar": "ما يقلل الألم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "pain_periodicity",
+            "label_en": "Periodicity",
+            "label_ar": "الدورية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "swelling_heading",
+            "label_en": "Swelling",
+            "label_ar": "التورم",
+            "type": "heading"
+          },
+          {
+            "id": "swelling_presence",
+            "label_en": "Swelling",
+            "label_ar": "تورم",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "swelling_site",
+            "label_en": "Site of Swelling",
+            "label_ar": "موقع التورم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "swelling_size",
+            "label_en": "Size of Swelling",
+            "label_ar": "حجم التورم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "swelling_onset",
+            "label_en": "Onset of Swelling",
+            "label_ar": "بداية التورم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "accidental", "label_en": "Accidental", "label_ar": "عرضي/مفاجئ" },
+              { "value": "acute", "label_en": "Acute", "label_ar": "حاد" },
+              { "value": "gradual", "label_en": "Gradual", "label_ar": "تدريجي" }
+            ]
+          },
+          {
+            "id": "swelling_course",
+            "label_en": "Course of Swelling",
+            "label_ar": "مسار التورم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "progressive", "label_en": "Progressive", "label_ar": "تدريجي التدهور" },
+              { "value": "stationary", "label_en": "Stationary", "label_ar": "ثابت" },
+              { "value": "regressive", "label_en": "Regressive", "label_ar": "متراجع" },
+              { "value": "fluctuating", "label_en": "Fluctuating", "label_ar": "متذبذب" }
+            ]
+          },
+          {
+            "id": "disturbance_of_function_heading",
+            "label_en": "Disturbance of Function",
+            "label_ar": "اضطراب الوظيفة",
+            "type": "heading"
+          },
+          {
+            "id": "esophagus_symptoms_heading",
+            "label_en": "Esophagus",
+            "label_ar": "المريء",
+            "type": "heading"
+          },
+          {
+            "id": "dysphagia",
+            "label_en": "Dysphagia",
+            "label_ar": "عسر البلع",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "dysphagia_type",
+            "label_en": "Dysphagia Type",
+            "label_ar": "نوع عسر البلع",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "to_solids", "label_en": "To Solids (Mechanical)", "label_ar": "للصلبة (انسداد ميكانيكي)" },
+              { "value": "to_fluids", "label_en": "To Fluids (Functional)", "label_ar": "للسوائل (انسداد وظيفي)" }
+            ]
+          },
+          {
+            "id": "dysphagia_onset",
+            "label_en": "Onset of Dysphagia",
+            "label_ar": "بداية عسر البلع",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "acute", "label_en": "Acute (Inflammation)", "label_ar": "حاد (التهاب)" },
+              { "value": "gradual", "label_en": "Gradual (Cancer)", "label_ar": "تدريجي (ورم)" }
+            ]
+          },
+          {
+            "id": "dysphagia_course",
+            "label_en": "Course of Dysphagia",
+            "label_ar": "مسار عسر البلع",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "progressive", "label_en": "Progressive (Carcinoma)", "label_ar": "تدريجي التدهور (سرطان)" },
+              { "value": "intermittent", "label_en": "Intermittent (Achalasia)", "label_ar": "متقطع (ACHALASIA)" },
+              { "value": "stationary", "label_en": "Stationary (Stricture)", "label_ar": "ثابت (تضيق)" }
+            ]
+          },
+          {
+            "id": "water_brash",
+            "label_en": "Water Brash",
+            "label_ar": "طَلْع المريء",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "heart_burn",
+            "label_en": "Heart Burn",
+            "label_ar": "حرقة المعدة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "stomach_symptoms_heading",
+            "label_en": "Stomach",
+            "label_ar": "المعدة",
+            "type": "heading"
+          },
+          {
+            "id": "appetite",
+            "label_en": "Appetite",
+            "label_ar": "الشهية",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "good", "label_en": "Good (DU)", "label_ar": "جيدة (قرحة اثني عشر)" },
+              { "value": "sitophobia", "label_en": "Good but afraid to eat (GU)", "label_ar": "جيدة ولكن خائف من الأكل (قرحة معدية)" },
+              { "value": "dislikes_meat", "label_en": "Dislikes meat (Carcinoma)", "label_ar": "ينفر من اللحم (سرطان)" },
+              { "value": "afraid_fatty", "label_en": "Afraid of fatty meals (GB)", "label_ar": "خائف من الدهون (مرارة)" },
+              { "value": "polyphagia", "label_en": "Polyphagia", "label_ar": "شره طعام" },
+              { "value": "perverted", "label_en": "Perverted (Picca)", "label_ar": "منحرف (بيكا)" }
+            ]
+          },
+          {
+            "id": "weight_loss",
+            "label_en": "Weight Loss",
+            "label_ar": "فقدان الوزن",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "weight_loss_details",
+            "label_en": "Weight Loss Details",
+            "label_ar": "تفاصيل فقدان الوزن",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "nausea",
+            "label_en": "Nausea",
+            "label_ar": "غثيان",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "vomiting",
+            "label_en": "Vomiting",
+            "label_ar": "قيء",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "vomiting_details",
+            "label_en": "Vomiting Details (Onset, Content, Frequency)",
+            "label_ar": "تفاصيل القيء (البداية، المحتوى، التكرار)",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "small_intestine_symptoms_heading",
+            "label_en": "Small Intestine",
+            "label_ar": "الأمعاء الدقيقة",
+            "type": "heading"
+          },
+          {
+            "id": "diarrhea",
+            "label_en": "Diarrhea",
+            "label_ar": "إسهال",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "diarrhea_details",
+            "label_en": "Diarrhea Details (Consistency, Frequency)",
+            "label_ar": "تفاصيل الإسهال (القوام، التكرار)",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "constipation",
+            "label_en": "Constipation",
+            "label_ar": "إمساك",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "audible_intestinal_sounds",
+            "label_en": "Audible Intestinal Sounds",
+            "label_ar": "أصوات معوية مسموعة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "flatulence_distention",
+            "label_en": "Flatulence & Distention",
+            "label_ar": "انتفاخ وتمدد",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "large_intestine_symptoms_heading",
+            "label_en": "Large Intestine",
+            "label_ar": "الأمعاء الغليظة",
+            "type": "heading"
+          },
+          {
+            "id": "dysentery",
+            "label_en": "Dysentery (Mucus & Blood with Tenesmus)",
+            "label_ar": "زحار (مخاط ودم مع تينزمس)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "bleeding_per_rectum",
+            "label_en": "Bleeding Per Rectum (Fresh Blood)",
+            "label_ar": "نزيف مستقيمي (دم طازج)",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "melena",
+            "label_en": "Melena (Black Tarry Stools)",
+            "label_ar": "تبرز أسود قطراني",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "hematemesis",
+            "label_en": "Hematemesis (Vomiting Blood)",
+            "label_ar": "قيء دموي",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "liver_symptoms_heading",
+            "label_en": "Liver",
+            "label_ar": "الكبد",
+            "type": "heading"
+          },
+          {
+            "id": "jaundice",
+            "label_en": "Jaundice",
+            "label_ar": "اليرقان",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "jaundice_onset",
+            "label_en": "Onset of Jaundice",
+            "label_ar": "بداية اليرقان",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "acute", "label_en": "Acute (Viral, Calcular)", "label_ar": "حاد (فيروسي، حصوي)" },
+              { "value": "gradual", "label_en": "Gradual (Malignant, Cirrhosis)", "label_ar": "تدريجي (خبيث، تليف)" }
+            ]
+          },
+          {
+            "id": "jaundice_course",
+            "label_en": "Course of Jaundice",
+            "label_ar": "مسار اليرقان",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "progressive", "label_en": "Progressive (Malignant, Cirrhosis)", "label_ar": "تدريجي التدهور (خبيث، تليف)" },
+              { "value": "regressive", "label_en": "Regressive (Viral)", "label_ar": "متراجع (فيروسي)" },
+              { "value": "intermittent", "label_en": "Intermittent (Calcular, Hemolytic)", "label_ar": "متقطع (حصوي، انحلالي)" }
+            ]
+          },
+          {
+            "id": "jaundice_urine_color",
+            "label_en": "Urine Color",
+            "label_ar": "لون البول",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "dark", "label_en": "Dark (Hepatocellular & Obstructive)", "label_ar": "داكن (خلوي وانسدادي)" },
+              { "value": "pale", "label_en": "Pale (Hemolytic)", "label_ar": "فاتح (انحلالي)" }
+            ]
+          },
+          {
+            "id": "jaundice_stool_color",
+            "label_en": "Stool Color",
+            "label_ar": "لون البراز",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "pale_clay", "label_en": "Pale Clay (Obstructive)", "label_ar": "فاتح صلصالي (انسدادي)" },
+              { "value": "dark", "label_en": "Dark (Hemolytic)", "label_ar": "داكن (انحلالي)" },
+              { "value": "slightly_pale", "label_en": "Slightly Pale (Hepatocellular)", "label_ar": "فاتح قليلاً (خلوي)" }
+            ]
+          },
+          {
+            "id": "jaundice_fever",
+            "label_en": "Fever",
+            "label_ar": "حمى",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "jaundice_pruritis",
+            "label_en": "Pruritis",
+            "label_ar": "حكة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "bleeding_tendency",
+            "label_en": "Bleeding Tendency",
+            "label_ar": "نزيف",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "pancreas_symptoms_heading",
+            "label_en": "Pancreas",
+            "label_ar": "البنكرياس",
+            "type": "heading"
+          },
+          {
+            "id": "steatorrhea",
+            "label_en": "Steatorrhea (Bulky, Offensive, Floating Stools)",
+            "label_ar": "إسهال دهني (براز كثيف كريه الرائحة يطفو)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "genital_symptoms",
+            "label_en": "Genital Symptoms",
+            "label_ar": "أعراض تناسلية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "past_medical_history",
+        "title_en": "Past Medical History",
+        "title_ar": "التاريخ المرضي السابق",
+        "questions": [
+          {
+            "id": "similar_attacks",
+            "label_en": "Similar Attacks",
+            "label_ar": "نوبات مشابهة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "common_diseases",
+            "label_en": "Common Diseases",
+            "label_ar": "أمراض شائعة",
+            "type": "multicheck",
+            "items": [
+              { "id": "dm", "label_en": "DM", "label_ar": "السكر", "marked_if_negative": false },
+              { "id": "hypertension", "label_en": "Hypertension", "label_ar": "ضغط الدم", "marked_if_negative": false },
+              { "id": "tb", "label_en": "TB", "label_ar": "الدرن", "marked_if_negative": false },
+              { "id": "bronchitis", "label_en": "Bronchitis", "label_ar": "التهاب الشعب", "marked_if_negative": false },
+              { "id": "hepatitis", "label_en": "Hepatitis", "label_ar": "التهاب الكبد", "marked_if_negative": false },
+              { "id": "dvt", "label_en": "DVT", "label_ar": "تخثر وريدي عميق", "marked_if_negative": false },
+              { "id": "typhoid", "label_en": "Typhoid", "label_ar": "التيفوئيد", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "drug_intake_cholestasis",
+            "label_en": "Drug Intake (e.g. Chlorpromazine causing intrahepatic cholestasis)",
+            "label_ar": "تناول أدوية (مثل كلوربرومازين المسبب لركود صفراوي)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "previous_operations",
+            "label_en": "Previous Operations",
+            "label_ar": "عمليات سابقة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "family_history",
+        "title_en": "Family History",
+        "title_ar": "التاريخ العائلي",
+        "questions": [
+          {
+            "id": "consanguinity",
+            "label_en": "Consanguinity",
+            "label_ar": "قرابة الوالدين",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "similar_condition_family",
+            "label_en": "Similar Condition in Family Members",
+            "label_ar": "حالة مشابهة في أفراد العائلة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "git_diseases_fh",
+            "label_en": "GIT Diseases with Family History",
+            "label_ar": "أمراض الجهاز الهضمي ذات تاريخ عائلي",
+            "type": "multicheck",
+            "items": [
+              { "id": "congenital_pyloric_stenosis", "label_en": "Congenital Hypertrophic Pyloric Stenosis", "label_ar": "تضيق البواب الضخامي الخلقي", "marked_if_negative": false },
+              { "id": "familial_polyposis", "label_en": "Familial Polyposis", "label_ar": "الورم الغدي العائلي", "marked_if_negative": false },
+              { "id": "fibrocystic_pancreas", "label_en": "Fibrocystic Disease of Pancreas", "label_ar": "مرض تليف كيسي البنكرياس", "marked_if_negative": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "general_examination",
+        "title_en": "General Examination",
+        "title_ar": "الفحص العام",
+        "questions": [
+          {
+            "id": "conscious_level",
+            "label_en": "Conscious Level",
+            "label_ar": "مستوى الوعي",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "alert", "label_en": "Alert", "label_ar": "منتبه" },
+              { "value": "drowsy", "label_en": "Drowsy", "label_ar": "نعسان" },
+              { "value": "unconscious", "label_en": "Unconscious", "label_ar": "فاقد الوعي" }
+            ]
+          },
+          {
+            "id": "orientation",
+            "label_en": "Orientation",
+            "label_ar": "التوجيه",
+            "type": "multicheck",
+            "items": [
+              { "id": "time", "label_en": "Time", "label_ar": "الزمان", "marked_if_negative": false },
+              { "id": "place", "label_en": "Place", "label_ar": "المكان", "marked_if_negative": false },
+              { "id": "persons", "label_en": "Persons", "label_ar": "الأشخاص", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "body_built",
+            "label_en": "Body Built",
+            "label_ar": "بنية الجسم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "average", "label_en": "Average", "label_ar": "متوسط" },
+              { "value": "underweight", "label_en": "Underweight", "label_ar": "نحيف" },
+              { "value": "obese", "label_en": "Obese", "label_ar": "سمين" }
+            ]
+          },
+          {
+            "id": "decubitus",
+            "label_en": "Decubitus",
+            "label_ar": "وضعية المريض",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "normal", "label_en": "Normal", "label_ar": "طبيعي" },
+              { "value": "orthopnea", "label_en": "Orthopnea (Massive Ascites)", "label_ar": "صعوبة التنفس عند الاستلقاء (استسقاء شديد)" }
+            ]
+          },
+          {
+            "id": "facial_expression",
+            "label_en": "Facial Expression",
+            "label_ar": "تعبيرات الوجه",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "vital_signs_heading",
+            "label_en": "Vital Signs",
+            "label_ar": "العلامات الحيوية",
+            "type": "heading"
+          },
+          {
+            "id": "blood_pressure",
+            "label_en": "Blood Pressure",
+            "label_ar": "ضغط الدم",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "pulse",
+            "label_en": "Pulse",
+            "label_ar": "النبض",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "water_hammer_pulse",
+            "label_en": "Water Hammer Pulse (Liver Cell Failure)",
+            "label_ar": "نبض المطرقة المائية (فشل خلايا الكبد)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "bradycardia",
+            "label_en": "Bradycardia (Obstructive Jaundice)",
+            "label_ar": "بطء القلب (يرقان انسدادي)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "temperature",
+            "label_en": "Temperature",
+            "label_ar": "الحرارة",
+            "type": "number",
+            "unit_en": "°C",
+            "unit_ar": "°م",
+            "required": false
+          },
+          {
+            "id": "complexion",
+            "label_en": "Complexion",
+            "label_ar": "لون البشرة",
+            "type": "multicheck",
+            "items": [
+              { "id": "jaundice", "label_en": "Jaundice", "label_ar": "يرقان", "marked_if_negative": true },
+              { "id": "pallor", "label_en": "Pallor", "label_ar": "شحوب", "marked_if_negative": false },
+              { "id": "cyanosis", "label_en": "Cyanosis", "label_ar": "زرقة", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "jaundice_color",
+            "label_en": "Jaundice Color",
+            "label_ar": "لون اليرقان",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "lemon_yellow", "label_en": "Lemon Yellow (Hemolytic)", "label_ar": "أصفر ليموني (انحلالي)" },
+              { "value": "orange_yellow", "label_en": "Orange Yellow (Hepatocellular)", "label_ar": "أصفر برتقالي (خلوي)" },
+              { "value": "olive_yellow", "label_en": "Olive Yellow (Obstructive)", "label_ar": "أصفر زيتوني (انسدادي)" }
+            ]
+          },
+          {
+            "id": "chest_heart",
+            "label_en": "Chest & Heart",
+            "label_ar": "الصدر والقلب",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "spider_naevi",
+            "label_en": "Spider Naevi",
+            "label_ar": "الشامات العنكبوتية",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "gynaecomastia",
+            "label_en": "Gynaecomastia",
+            "label_ar": "تثدي الرجل",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "extremities_heading",
+            "label_en": "Extremities",
+            "label_ar": "الأطراف",
+            "type": "heading"
+          },
+          {
+            "id": "clubbing",
+            "label_en": "Clubbing",
+            "label_ar": "تبلل الأصابع",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "palmar_erythema",
+            "label_en": "Palmar Erythema",
+            "label_ar": "احمرار الراحة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "flapping_tremors",
+            "label_en": "Flapping Tremors",
+            "label_ar": "الرعشة الرفرفية",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "scratch_marks",
+            "label_en": "Scratch Marks (Obst. Jaundice)",
+            "label_ar": "علامات الحك (يرقان انسدادي)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "ll_edema",
+            "label_en": "Lower Limb Edema",
+            "label_ar": "وذمة الأطراف السفلية",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "skin_rash",
+            "label_en": "Skin Rash / Bleeding Tendency",
+            "label_ar": "طفح جلدي / نزيف",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "head_neck_heading",
+            "label_en": "Head & Neck",
+            "label_ar": "الرأس والرقبة",
+            "type": "heading"
+          },
+          {
+            "id": "congested_neck_veins",
+            "label_en": "Congested Neck Veins",
+            "label_ar": "احتقان أوردة الرقبة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "wasting_temporalis",
+            "label_en": "Wasting Temporalis (CLD)",
+            "label_ar": "ضمول الصدغي (أمراض الكبد المزمنة)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "enlarged_parotid",
+            "label_en": "Enlarged Parotid (CLD)",
+            "label_ar": "تضخم النكفية (أمراض الكبد المزمنة)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "enlarged_ln",
+            "label_en": "Enlarged Lymph Nodes",
+            "label_ar": "تضخم العقد اللمفاوية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          }
+        ]
+      },
+      {
+        "id": "local_examination",
+        "title_en": "Local Examination",
+        "title_ar": "الفحص الموضعي",
+        "questions": [
+          {
+            "id": "exposure_heading",
+            "label_en": "Exposure",
+            "label_ar": "الكشف",
+            "type": "heading"
+          },
+          {
+            "id": "exposure",
+            "label_en": "Exposure (From Nipple till Mid Thigh)",
+            "label_ar": "الكشف (من الحلمة حتى منتصف الفخذ)",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "inspection_heading",
+            "label_en": "Inspection",
+            "label_ar": "الفحص البصري",
+            "type": "heading"
+          },
+          {
+            "id": "abdominal_contour",
+            "label_en": "Abdominal Contour",
+            "label_ar": "محتوى البطن",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "normal", "label_en": "Normal", "label_ar": "طبيعي" },
+              { "value": "localized_bulge", "label_en": "Localized Bulge", "label_ar": "انتفاخ موضعي" },
+              { "value": "generalized_bulge", "label_en": "Generalized Bulge", "label_ar": "انتفاخ عام" },
+              { "value": "retracted", "label_en": "Retracted", "label_ar": "منكمش" }
+            ]
+          },
+          {
+            "id": "bulge_type",
+            "label_en": "Generalized Bulge Type",
+            "label_ar": "نوع الانتفاخ العام",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "fluid", "label_en": "Fluid (Ascites - Symmetrical + Full Flanks)", "label_ar": "سائل (استسقاء - متماثل + الخاصرتين ممتلئتين)" },
+              { "value": "fat", "label_en": "Fat (Obesity - Symmetrical + NO Full Flanks)", "label_ar": "دهون (سمنة - متماثل + الخاصرتين غير ممتلئتين)" },
+              { "value": "flatus", "label_en": "Flatus (Distension - Symmetrical + NO Full Flanks)", "label_ar": "غازات (انتفاخ - متماثل + الخاصرتين غير ممتلئتين)" },
+              { "value": "fetus", "label_en": "Fetus (Pregnancy)", "label_ar": "جنين (حمل)" },
+              { "value": "fibroid", "label_en": "Fibroid / Large Tumor", "label_ar": "ورم ليفي / ورم كبير" }
+            ]
+          },
+          {
+            "id": "movement_with_respiration",
+            "label_en": "Movement with Respiration",
+            "label_ar": "الحركة مع التنفس",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "freely_mobile", "label_en": "Freely Mobile", "label_ar": "متحرك بحرية" },
+              { "value": "decreased_absent", "label_en": "Decreased or Absent", "label_ar": "مقلوب أو غائب" }
+            ]
+          },
+          {
+            "id": "visible_intestinal_movements",
+            "label_en": "Visible Intestinal Movements (Peristalsis)",
+            "label_ar": "حركات معوية مرئية (التموج)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "peristalsis_type",
+            "label_en": "Type of Peristalsis",
+            "label_ar": "نوع التموج",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "left_to_right", "label_en": "Left to Right in Epigastrium (Pyloric)", "label_ar": "من اليسار لليمين في الشر سوف (بوابي)" },
+              { "value": "step_ladder", "label_en": "Step Ladder (Small Intestinal)", "label_ar": "سلالم (أمعاء دقيقة)" },
+              { "value": "horseshoe", "label_en": "Horse-shoe Crossing Midline Rt to Lt (Colonic)", "label_ar": "حدوة حصان عابرة من اليمين لليسار (قولوني)" }
+            ]
+          },
+          {
+            "id": "pulsations",
+            "label_en": "Pulsations",
+            "label_ar": "نبضانات",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "subcostal_angle",
+            "label_en": "Subcostal Angle",
+            "label_ar": "الزاوية تحت الضلع",
+            "type": "number",
+            "unit_en": "degrees",
+            "unit_ar": "درجة",
+            "required": false
+          },
+          {
+            "id": "pigmentation",
+            "label_en": "Pigmentation",
+            "label_ar": "تصبغات",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "divarication_recti",
+            "label_en": "Divarication of Recti",
+            "label_ar": "انفصال العضلة المستقيمة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "umbilicus_heading",
+            "label_en": "Umbilicus",
+            "label_ar": "السرة",
+            "type": "heading"
+          },
+          {
+            "id": "umbilicus_shape",
+            "label_en": "Umbilicus Shape",
+            "label_ar": "شكل السرة",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "inverted", "label_en": "Inverted (Normal)", "label_ar": "غائرة (طبيعي)" },
+              { "value": "everted", "label_en": "Everted (Chronic ↑ Intra-abdominal Pr. / Hernia)", "label_ar": "بارزة (ارتفاع ضغط مزمن / فتق)" },
+              { "value": "deep", "label_en": "Deep (Obesity)", "label_ar": "عميقة (سمنة)" }
+            ]
+          },
+          {
+            "id": "umbilicus_nodule",
+            "label_en": "Umbilicus Nodule (Sister Joseph)",
+            "label_ar": "عقيدة السرة (أخت يوسف)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "umbilicus_discharge",
+            "label_en": "Umbilicus Discharge",
+            "label_ar": "إفرازات السرة",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "hernias",
+            "label_en": "Hernias",
+            "label_ar": "فتوق",
+            "type": "multicheck",
+            "items": [
+              { "id": "epigastric", "label_en": "Epigastric", "label_ar": "فوق المعدة", "marked_if_negative": false },
+              { "id": "paraumbilical", "label_en": "Paraumbilical", "label_ar": "جوار السرة", "marked_if_negative": false },
+              { "id": "inguinal", "label_en": "Inguinal", "label_ar": "أربي", "marked_if_negative": false },
+              { "id": "femoral", "label_en": "Femoral", "label_ar": "فخذي", "marked_if_negative": false },
+              { "id": "incisional", "label_en": "Incisional", "label_ar": "جراحي", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "skin_heading",
+            "label_en": "Skin",
+            "label_ar": "الجلد",
+            "type": "heading"
+          },
+          {
+            "id": "skin_findings",
+            "label_en": "Skin Findings",
+            "label_ar": "نتائج الجلد",
+            "type": "multicheck",
+            "items": [
+              { "id": "scar", "label_en": "Scar", "label_ar": "ندبة", "marked_if_negative": false },
+              { "id": "stria", "label_en": "Stria", "label_ar": "خطوط", "marked_if_negative": false },
+              { "id": "scratch_marks", "label_en": "Scratch Marks", "label_ar": "علامات الحك", "marked_if_negative": false },
+              { "id": "cullen_grey_turner", "label_en": "Cullen / Grey Turner Sign", "label_ar": "علامة كولين / جراي تيرنر", "marked_if_negative": false },
+              { "id": "petechiae", "label_en": "Petechiae / Ecchymosis", "label_ar": "حبرات / كدمات", "marked_if_negative": false }
+            ]
+          },
+          {
+            "id": "hair_distribution",
+            "label_en": "Hair Distribution (Feminine in CLD)",
+            "label_ar": "توزيع الشعر (أنثوي في أمراض الكبد المزمنة)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "dilated_veins_heading",
+            "label_en": "Dilated Veins",
+            "label_ar": "أوردة متسعة",
+            "type": "heading"
+          },
+          {
+            "id": "dilated_veins",
+            "label_en": "Dilated Veins",
+            "label_ar": "أوردة متسعة",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "veins_site",
+            "label_en": "Site of Dilated Veins",
+            "label_ar": "موقع الأوردة المتسعة",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "around_umbilicus", "label_en": "Around Umbilicus (Caput Medusa - Portal HTN)", "label_ar": "حول السرة (رأس ميدوسا - ارتفاع ضغط الباب)" },
+              { "value": "flanks", "label_en": "Mainly at Flanks (IVC Obstruction)", "label_ar": "فقط في الخاصرتين (انسداد الوريد الأجوف السفلي)" }
+            ]
+          },
+          {
+            "id": "vein_direction",
+            "label_en": "Direction of Blood Flow",
+            "label_ar": "اتجاه تدفق الدم",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "away_from_umbilicus", "label_en": "Away from Umbilicus (Caput Medusa)", "label_ar": "مبتعد عن السرة (رأس ميدوسا)" },
+              { "value": "below_upwards", "label_en": "From Below Upwards (IVC Obstruction)", "label_ar": "من الأسفل للأعلى (انسداد الوريد الأجوف)" }
+            ]
+          },
+          {
+            "id": "palpation_heading",
+            "label_en": "Palpation",
+            "label_ar": "الجس",
+            "type": "heading"
+          },
+          {
+            "id": "superficial_palpation_heading",
+            "label_en": "Superficial Palpation",
+            "label_ar": "الجس السطحي",
+            "type": "heading"
+          },
+          {
+            "id": "tenderness",
+            "label_en": "Tenderness",
+            "label_ar": "إيلام",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "rigidity",
+            "label_en": "Rigidity",
+            "label_ar": "تصلب",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "guarding",
+            "label_en": "Guarding",
+            "label_ar": "حراسة",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "hyperesthesia",
+            "label_en": "Hyperesthesia (Boas's Sign)",
+            "label_ar": "فرط الحساسية (علامة بواس)",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "deep_palpation_heading",
+            "label_en": "Deep Palpation",
+            "label_ar": "الجس العميق",
+            "type": "heading"
+          },
+          {
+            "id": "liver_heading",
+            "label_en": "Liver",
+            "label_ar": "الكبد",
+            "type": "heading"
+          },
+          {
+            "id": "liver_palpable",
+            "label_en": "Liver Palpable",
+            "label_ar": "الكبد محسوس",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "liver_edge",
+            "label_en": "Liver Edge",
+            "label_ar": "حافة الكبد",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "sharp_well_defined", "label_en": "Sharp & Well Defined", "label_ar": "حادة ومحددة جيداً" },
+              { "value": "rounded", "label_en": "Rounded", "label_ar": "مدورة" }
+            ]
+          },
+          {
+            "id": "liver_surface",
+            "label_en": "Liver Surface",
+            "label_ar": "سطح الكبد",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "smooth", "label_en": "Smooth", "label_ar": "أملس" },
+              { "value": "nodular", "label_en": "Nodular", "label_ar": "عقيدات" },
+              { "value": "granular", "label_en": "Granular", "label_ar": "محبب" }
+            ]
+          },
+          {
+            "id": "liver_consistency",
+            "label_en": "Liver Consistency",
+            "label_ar": "قوام الكبد",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "firm", "label_en": "Firm", "label_ar": "متماسك" },
+              { "value": "hard", "label_en": "Hard", "label_ar": "صلب" },
+              { "value": "soft", "label_en": "Soft", "label_ar": "لين" }
+            ]
+          },
+          {
+            "id": "liver_cm_below_margin",
+            "label_en": "Liver (cm below costal margin)",
+            "label_ar": "الكبد (سم أسفل الحافة الضلعية)",
+            "type": "number",
+            "unit_en": "cm",
+            "unit_ar": "سم",
+            "required": false
+          },
+          {
+            "id": "liver_tenderness",
+            "label_en": "Liver Tenderness",
+            "label_ar": "إيلام الكبد",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "liver_pulsations",
+            "label_en": "Liver Pulsations",
+            "label_ar": "نبضانات الكبد",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "spleen_heading",
+            "label_en": "Spleen",
+            "label_ar": "الطحال",
+            "type": "heading"
+          },
+          {
+            "id": "spleen_palpable",
+            "label_en": "Spleen Palpable",
+            "label_ar": "الطحال محسوس",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "spleen_edge",
+            "label_en": "Spleen Edge",
+            "label_ar": "حافة الطحال",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "sharp", "label_en": "Sharp", "label_ar": "حادة" },
+              { "value": "rounded", "label_en": "Rounded", "label_ar": "مدورة" }
+            ]
+          },
+          {
+            "id": "spleen_surface",
+            "label_en": "Spleen Surface",
+            "label_ar": "سطح الطحال",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "smooth", "label_en": "Smooth / Regular", "label_ar": "أملس / منتظم" },
+              { "value": "irregular", "label_en": "Irregular", "label_ar": "غير منتظم" }
+            ]
+          },
+          {
+            "id": "spleen_notch",
+            "label_en": "Spleen Notch",
+            "label_ar": "ثلمة الطحال",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "kidney_heading",
+            "label_en": "Kidneys",
+            "label_ar": "الكلى",
+            "type": "heading"
+          },
+          {
+            "id": "renal_angle_tenderness",
+            "label_en": "Renal Angle Tenderness",
+            "label_ar": "إيلام الزاوية الكلوية",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "kidney_ballottement",
+            "label_en": "Kidney Ballottement",
+            "label_ar": "تراقص الكلية",
+            "type": "checkbox",
+            "marked_if_negative": false
+          },
+          {
+            "id": "gallbladder_heading",
+            "label_en": "Gallbladder",
+            "label_ar": "المرارة",
+            "type": "heading"
+          },
+          {
+            "id": "murphy_sign",
+            "label_en": "Murphy's Sign",
+            "label_ar": "علامة مورفي",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "gallbladder_palpable",
+            "label_en": "Gallbladder Palpable",
+            "label_ar": "المرارة محسوسة",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "urinary_bladder_heading",
+            "label_en": "Urinary Bladder",
+            "label_ar": "المثانة البولية",
+            "type": "heading"
+          },
+          {
+            "id": "bladder_palpable",
+            "label_en": "Urinary Bladder Palpable",
+            "label_ar": "المثانة البولية محسوسة",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "percussion_heading",
+            "label_en": "Percussion",
+            "label_ar": "القرع",
+            "type": "heading"
+          },
+          {
+            "id": "shifting_dullness",
+            "label_en": "Shifting Dullness (Ascites)",
+            "label_ar": "أصمية متنقلة (الاستسقاء)",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "fluid_thrill",
+            "label_en": "Fluid Thrill (Massive Ascites)",
+            "label_ar": "رجة السائل (الاستسقاء الضخم)",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "auscultation_heading",
+            "label_en": "Auscultation",
+            "label_ar": "التسمع",
+            "type": "heading"
+          },
+          {
+            "id": "bowel_sounds",
+            "label_en": "Bowel Sounds",
+            "label_ar": "أصوات الأمعاء",
+            "type": "radio",
+            "required": false,
+            "options": [
+              { "value": "normal", "label_en": "Normal", "label_ar": "طبيعي" },
+              { "value": "increased", "label_en": "Increased / Hyperactive", "label_ar": "زايد / فرط نشاط" },
+              { "value": "absent", "label_en": "Absent (Silent Abdomen)", "label_ar": "غائب (بطن هادئ)" }
+            ]
+          },
+          {
+            "id": "bruit",
+            "label_en": "Vascular Bruits",
+            "label_ar": "همهمة وعائية / لغط",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "digital_rectal_exam_heading",
+            "label_en": "Digital Rectal Exam (DRE)",
+            "label_ar": "الفحص الشرجي بالإصبع",
+            "type": "heading"
+          },
+          {
+            "id": "dre_performed",
+            "label_en": "DRE Performed",
+            "label_ar": "تم إجراء الفحص الشرجي بالأصبع",
+            "type": "checkbox",
+            "marked_if_negative": true
+          },
+          {
+            "id": "dre_findings",
+            "label_en": "DRE Findings",
+            "label_ar": "نتائج الفحص الشرجي",
+            "type": "textarea",
+            "required": false
+          }
+        ]
+      }
+    ]
   }
 ];
